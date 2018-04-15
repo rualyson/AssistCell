@@ -3,14 +3,11 @@ package com.online.assistencia.assistcell;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -42,15 +39,6 @@ public class Inicio extends AppCompatActivity
 
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tablayout1);
         tabLayout.setupWithViewPager(viewPager);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -100,7 +88,8 @@ public class Inicio extends AppCompatActivity
         if (id == R.id.nav_manage) {
             // Handle the camera action
         } else if (id == R.id.nav_inicio) {
-
+            Intent intent = new Intent(this, DashADM.class);
+            startActivity(intent);
         }else if (id == R.id.nav_login) {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
@@ -119,8 +108,8 @@ public class Inicio extends AppCompatActivity
             super(fm);
 
             fragments = new ArrayList<Fragment>(2);
-            fragments.add(new CatalogoFragment());
-            fragments.add(new InformacoesFragment());
+            fragments.add(new TabCatalogo());
+            fragments.add(new TabInformacoes());
 
             titles = new ArrayList<String>(fragments.size());
             titles.add(getString(R.string.informacoes));
@@ -130,18 +119,24 @@ public class Inicio extends AppCompatActivity
 
         @Override
         public Fragment getItem(int position) {
+
             return fragments.get(position);
         }
 
         @Override
         public int getCount() {
+
             return fragments.size();
         }
-
-        @Nullable
-        @Override
         public CharSequence getPageTitle(int position) {
-            return super.getPageTitle(position);
+            switch (position){
+                case 0:
+                    return "CATÁLOGO";
+                case 1:
+                    return "INFORMAÇÕES";
+            }
+            return null;
         }
+
     }
 }
