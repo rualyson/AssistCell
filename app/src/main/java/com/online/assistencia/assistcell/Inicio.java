@@ -2,7 +2,6 @@ package com.online.assistencia.assistcell;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -85,7 +84,7 @@ public class Inicio extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_manage) {
+        if (id == R.id.nav_orcamento) {
             // Handle the camera action
         } else if (id == R.id.nav_inicio) {
             Intent intent = new Intent(this, DashADM.class);

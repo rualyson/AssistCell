@@ -90,7 +90,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:layout_margin="10dp"></View>
                 <TextView
                     android:layout_width="wrap_content"
@@ -136,7 +136,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:layout_margin="10dp"></View>
                 <TextView
                     android:layout_width="wrap_content"
@@ -174,7 +174,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:layout_margin="10dp"></View>
                 <TextView
                     android:layout_width="wrap_content"
@@ -227,7 +227,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_margin="10dp"
-                    android:background="@color/colorPrimaryDark"></View>
+                    android:background="@color/colorPrimary"></View>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -265,7 +265,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
                     android:layout_margin="10dp"></View>
                 <TextView
                     android:layout_width="wrap_content"
