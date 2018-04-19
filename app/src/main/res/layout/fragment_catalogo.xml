@@ -45,6 +45,7 @@
                             android:background="@color/colorPrimary"
                             android:layout_margin="10dp"/>
                         <TextView
+                            android:id="@+id/txtTela"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:padding="8dp"
@@ -78,6 +79,7 @@
                         android:background="@color/colorPrimary"
                         android:layout_margin="10dp"/>
                     <TextView
+                        android:id="@+id/txtPelicula"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:padding="8dp"
@@ -121,6 +123,7 @@
                         android:layout_margin="10dp"/>
 
                     <TextView
+                        android:id="@+id/txtFone"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:padding="8dp"
@@ -156,6 +159,7 @@
                         android:layout_margin="10dp"/>
 
                     <TextView
+                        android:id="@+id/txtCapa"
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
                         android:padding="8dp"
