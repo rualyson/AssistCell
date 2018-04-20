@@ -1,6 +1,7 @@
 package com.online.assistencia.assistcell;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -24,6 +25,7 @@ public class TabCatalogo extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_catalogo, container, false);
+
     }
 
 }
