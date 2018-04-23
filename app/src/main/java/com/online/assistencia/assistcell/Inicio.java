@@ -16,13 +16,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
-public class Inicio extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class Inicio extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     @Override
@@ -31,6 +29,8 @@ public class Inicio extends AppCompatActivity
         setContentView(R.layout.activity_inicio);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
         //viewPager
 
@@ -48,8 +48,9 @@ public class Inicio extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
     }
+
+
 
     @Override
     public void onBackPressed() {

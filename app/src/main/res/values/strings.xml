@@ -26,4 +26,5 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="title_activity_tab_prod_categ1">TabProdCateg1</string>
 </resources>
