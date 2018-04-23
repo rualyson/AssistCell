@@ -22,7 +22,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class Inicio extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+        implements NavigationView.OnNavigationItemSelectedListener/*, View.OnClickListener*/ {
 
     private ImageView tela, pelicula, fone, capinha;
 
@@ -50,7 +50,7 @@ public class Inicio extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        tela = (ImageView) findViewById(R.id.icon_tela);
+        /*tela = (ImageView) findViewById(R.id.icon_tela);
         pelicula = (ImageView) findViewById(R.id.icon_pelicula);
         fone = (ImageView) findViewById(R.id.icon_fones);
         capinha = (ImageView) findViewById(R.id.icon_capas);
@@ -58,7 +58,7 @@ public class Inicio extends AppCompatActivity
         tela.setOnClickListener(this);
         pelicula.setOnClickListener(this);
         fone.setOnClickListener(this);
-        capinha.setOnClickListener(this);
+        capinha.setOnClickListener(this);*/
 
 
     }
@@ -112,7 +112,7 @@ public class Inicio extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
+/*
     @Override
     public void onClick(View v) {
         Intent i;
@@ -124,7 +124,7 @@ public class Inicio extends AppCompatActivity
             case R.id.icon_capas: i = new Intent(this, SubGruposTela.class); startActivity(i); break;
         }
     }
-
+*/
     public class MyAdapter extends FragmentPagerAdapter {
         private final ArrayList<Fragment> fragments;
         private final ArrayList<String> titles;
