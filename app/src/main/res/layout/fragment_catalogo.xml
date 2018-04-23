@@ -20,6 +20,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="2dp"
+                android:clickable="true"
                 android:weightSum="2">
 
                 <LinearLayout
@@ -38,7 +39,8 @@
                             android:layout_gravity="center"
                             android:background="@drawable/tela_touch_samsung"
                             android:clickable="true"
-                            />
+                            android:onClick="onClick"
+                            tools:ignore="OnClick" />
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
@@ -96,6 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:clickable="true"
                 android:weightSum="2">
 
                 <LinearLayout
