@@ -16,6 +16,10 @@
             android:id="@+id/nav_orcamento"
             android:icon="@drawable/ic_menu_manage"
             android:title="Orçamento" />
+        <item
+            android:id="@+id/nav_solicitar"
+            android:icon="@drawable/ic_create_black_24dp"
+            android:title="Solicitar produto" />
 
 
     </group>

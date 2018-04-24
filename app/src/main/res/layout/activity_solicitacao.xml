@@ -27,9 +27,9 @@
 
             <EditText
                 android:id="@+id/editText"
-                android:layout_width="371dp"
+                android:layout_width="307dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="center|center_horizontal"
                 android:ems="10"
                 android:inputType="textPersonName" />
 
@@ -44,9 +44,9 @@
 
             <EditText
                 android:id="@+id/editText2"
-                android:layout_width="374dp"
+                android:layout_width="307dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:ems="10"
                 android:inputType="textPersonName" />
 
@@ -61,21 +61,23 @@
 
             <EditText
                 android:id="@+id/editText4"
-                android:layout_width="374dp"
+                android:layout_width="307dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:ems="10"
                 android:inputType="phone" />
 
             <Button
                 android:id="@+id/button"
-                style="@android:style/Widget.Button"
+                style="?android:textAppearanceSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
+                android:background="@color/colorPrimary"
                 android:drawableBottom="@android:drawable/ic_menu_send"
-                android:text="Enviar" />
+                android:text="Enviar"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
 
             <TextView
                 android:id="@+id/textView4"
