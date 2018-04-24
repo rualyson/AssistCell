@@ -106,10 +106,10 @@ public class Inicio extends AppCompatActivity
         }else if (id == R.id.nav_login) {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
-        }else if (id == R.id.nav_solicitar) { //aqui eu editei
+        }else if (id == R.id.nav_solicitar) {
             Intent intent = new Intent(this, SolicitacaoActivity.class);
             startActivity(intent);
-        }  //até aqui
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
