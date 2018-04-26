@@ -23,7 +23,10 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">Senha incorreta!</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
+    <string name="permission_rationale"/>"Contacts permissions are needed for providing email
         completions."
-    </string>
+    <string name="data_solicitacao">Data de Solicitação</string>
+    <string name="email">Email</string>
+    <string name="nome_completo">Nome Completo</string>
+    <string name="telefone">Telefone</string>
 </resources>
