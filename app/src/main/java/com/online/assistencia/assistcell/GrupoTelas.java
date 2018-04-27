@@ -2,13 +2,14 @@ package com.online.assistencia.assistcell;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.View;
 import android.widget.ExpandableListView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class GrupoTelas extends Activity {
+public class GrupoTelas extends Activity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,4 +53,8 @@ public class GrupoTelas extends Activity {
         elvCompra.setAdapter(adaptador);
     }
 
+    @Override
+    public void onClick(View v) {
+
+    }
 }

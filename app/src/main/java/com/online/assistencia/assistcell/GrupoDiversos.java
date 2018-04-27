@@ -1,5 +1,6 @@
 package com.online.assistencia.assistcell;
 
+<<<<<<< HEAD
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ExpandableListView;
@@ -45,4 +46,7 @@ public class GrupoDiversos extends AppCompatActivity {
         // define o apadtador do ExpandableListView
         elvCompra.setAdapter(adaptador);
     }
+=======
+public class GrupoDiversos {
+>>>>>>> master
 }
