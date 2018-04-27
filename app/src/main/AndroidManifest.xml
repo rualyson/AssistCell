@@ -27,7 +27,13 @@
         <activity
             android:name=".LoginActivity"
             android:label="Login" />
-        <activity android:name=".DashADM"></activity>
+        <activity android:name=".DashADM" />
+        <activity android:name=".GrupoPeliculas" />
+        <activity android:name=".GrupoCases" />
+        <activity android:name=".GrupoFones" />
+        <activity android:name=".GrupoTelas" />
+        <activity android:name=".GrupoDiversos" />
+        <activity android:name=".GrupoCarregadores"></activity>
     </application>
 
 </manifest>
