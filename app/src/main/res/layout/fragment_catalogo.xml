@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".TabCatalogo">
-    
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -14,84 +14,88 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="2dp"
+                android:orientation="horizontal"
                 android:weightSum="2">
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="120dp"
-                    android:layout_weight="1"
                     android:layout_margin="2dp"
-                    android:orientation="vertical"
-                    android:background="@color/white">
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:orientation="vertical">
 
-                        <ImageButton
-                            android:id="@+id/icon_tela"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:padding="8dp"
-                            android:layout_gravity="center"
-                            android:background="@drawable/tela_touch_samsung"
-                            android:clickable="true"
-                            />
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/colorPrimary"
-                            android:layout_margin="10dp"/>
-                        <TextView
-                            android:id="@+id/txtTela"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="8dp"
-                            android:layout_marginTop="0dp"
-                            android:background="@color/white"
-                            android:text="Telas"
-                            android:textSize="18sp"
-                            android:textAlignment="center"/>
+                    <ImageButton
+                        android:id="@+id/icon_tela"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/tela_touch_samsung"
+                        android:clickable="true"
+                        android:padding="8dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/txtTela"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/white"
+                        android:padding="8dp"
+                        android:text="Telas"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="120dp"
-                    android:layout_weight="1"
                     android:layout_margin="2dp"
-                    android:orientation="vertical"
-                    android:background="@color/white">
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:orientation="vertical">
 
                     <ImageButton
                         android:id="@+id/icon_pelicula"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:padding="8dp"
-                        android:background="@drawable/pelicula_cell"
                         android:layout_gravity="center"
+                        android:background="@drawable/pelicula_cell"
                         android:clickable="true"
-                        />
+                        android:padding="8dp" />
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="@color/colorPrimary"
-                        android:layout_margin="10dp"/>
+                        android:layout_margin="10dp"
+                        android:background="@color/colorPrimary" />
+
                     <TextView
                         android:id="@+id/txtPelicula"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="8dp"
                         android:layout_marginTop="0dp"
                         android:background="@color/white"
+                        android:padding="8dp"
                         android:text="Películas"
-                        android:textSize="18sp"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -101,73 +105,155 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="120dp"
-                    android:layout_weight="1"
                     android:layout_margin="2dp"
-                    android:orientation="vertical"
-                    android:background="@color/white">
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:orientation="vertical">
 
                     <ImageButton
                         android:id="@+id/icon_fones"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:padding="8dp"
-                        android:layout_marginTop="0dp"
                         android:layout_gravity="center"
+                        android:layout_marginTop="0dp"
                         android:background="@drawable/fone_ouvido"
                         android:clickable="true"
-                        />
+                        android:padding="8dp" />
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="@color/colorPrimary"
-                        android:layout_margin="10dp"/>
+                        android:layout_margin="10dp"
+                        android:background="@color/colorPrimary" />
 
                     <TextView
                         android:id="@+id/txtFone"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="8dp"
                         android:layout_marginTop="0dp"
                         android:background="@color/white"
+                        android:padding="8dp"
                         android:text="Fones de Ouvidos"
-                        android:textSize="18sp"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="120dp"
-                    android:layout_weight="1"
                     android:layout_margin="2dp"
-                    android:orientation="vertical"
-                    android:background="@color/white">
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:orientation="vertical">
 
                     <ImageButton
                         android:id="@+id/icon_capas"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:padding="8dp"
-                        android:layout_marginTop="0dp"
                         android:layout_gravity="center"
+                        android:layout_marginTop="0dp"
                         android:background="@drawable/capa_cell"
                         android:clickable="true"
-                        />
+                        android:padding="8dp" />
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="@color/colorPrimary"
-                        android:layout_margin="10dp"/>
+                        android:layout_margin="10dp"
+                        android:background="@color/colorPrimary" />
 
                     <TextView
                         android:id="@+id/txtCapa"
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
-                        android:padding="8dp"
                         android:layout_marginTop="0dp"
                         android:background="@color/white"
+                        android:padding="8dp"
                         android:text="Capinhas"
-                        android:textSize="18sp"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/icon_carregador"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/carregador"
+                        android:clickable="true"
+                        android:padding="8dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/txtCarregador"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/white"
+                        android:padding="8dp"
+                        android:text="Carregador"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/icon_diversos"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/diversos"
+                        android:clickable="true"
+                        android:padding="8dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/txtDiversos"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/white"
+                        android:padding="8dp"
+                        android:text="Diversos"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 

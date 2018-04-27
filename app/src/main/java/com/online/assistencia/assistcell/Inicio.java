@@ -16,15 +16,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
-public class Inicio extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+public class Inicio extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private ImageView tela, pelicula, fone, capinha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +29,8 @@ public class Inicio extends AppCompatActivity
         setContentView(R.layout.activity_inicio);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
         //viewPager
 
@@ -49,19 +48,9 @@ public class Inicio extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        tela = (ImageView) findViewById(R.id.icon_tela);
-        pelicula = (ImageView) findViewById(R.id.icon_pelicula);
-        fone = (ImageView) findViewById(R.id.icon_fones);
-        capinha = (ImageView) findViewById(R.id.icon_capas);
-
-        tela.setOnClickListener(this);
-        pelicula.setOnClickListener(this);
-        fone.setOnClickListener(this);
-        capinha.setOnClickListener(this);
-
-
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -111,18 +100,6 @@ public class Inicio extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    @Override
-    public void onClick(View v) {
-        Intent i;
-
-        switch (v.getId()) {
-            case R.id.icon_tela: i = new Intent(this, SubGruposTela.class); startActivity(i); break;
-            case R.id.icon_pelicula: i = new Intent(this, SubGruposTela.class); startActivity(i); break;
-            case R.id.icon_fones: i = new Intent(this, SubGruposTela.class); startActivity(i); break;
-            case R.id.icon_capas: i = new Intent(this, SubGruposTela.class); startActivity(i); break;
-        }
     }
 
     public class MyAdapter extends FragmentPagerAdapter {
