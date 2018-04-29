@@ -12,6 +12,7 @@ public class FormReservaActivity extends AppCompatActivity {
     EditText editTelefone;
     EditText editEmail;
     EditText editData;
+    EditText editProduto;
     Button btnReservar;
 
     @Override
@@ -24,13 +25,16 @@ public class FormReservaActivity extends AppCompatActivity {
         editTelefone = (EditText) findViewById(R.id.editTelefone);
         editEmail = (EditText) findViewById(R.id.editEmail);
         editData = (EditText) findViewById(R.id.editData);
+        editProduto = (EditText) findViewById (R.id.editProduto);
         btnReservar = (Button) findViewById(R.id.btnReservar);
     }
 
-    /*btnAcessar.setOnClickListener(new View.OnClickListener()) {
+
+
+    /* btnAcessar.setOnClickListener(new View.OnClickListener()) {
         @Override public void onClick(View v) {
 
-            if(editNome.getText().length() == 0 || (editTelefone.getText().length() == 0) || (editEmail.getText().length() == 0) || (editData.getText().length() == 0)){
+            if(editNome.getText() || (editTelefone.getText().length() == 0) || (editEmail.getText().length() == 0) || (editData.getText().length() == 0)){
                 Toast.makeText(getApplication(),
                 "Os campos Nome, Telefone, Email e Data são obrigatórios!"
                 Toast.LENGTH_LONG).show();
