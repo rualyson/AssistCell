@@ -1,9 +1,11 @@
 package com.online.assistencia.assistcell;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ExpandableListView;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,7 +15,7 @@ public class GrupoPeliculas extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grupo_peliculas);
+        setContentView(R.layout.activity_grupo_telas);
 
         ExpandableListView elvCompra = (ExpandableListView) findViewById(R.id.elvCompra);
 
@@ -50,6 +52,18 @@ public class GrupoPeliculas extends Activity {
         Adaptador adaptador = new Adaptador(this, lstGrupos, lstItensGrupo);
         // define o apadtador do ExpandableListView
         elvCompra.setAdapter(adaptador);
+
+
+
+    }
+
+    public void onClick(View v) {
+    }
+
+    public void telaReserv(View view){
+
+        Intent intent = new Intent(GrupoPeliculas.this, FormReservaActivity.class);
+        startActivity(intent);
     }
 
 }
