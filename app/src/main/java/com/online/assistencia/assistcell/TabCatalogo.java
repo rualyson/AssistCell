@@ -8,11 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class TabCatalogo extends Fragment{
-    ImageButton icon_tela, icon_fones,  icon_pelicula, icon_capas, icon_carregador, icon_diversos;
+    ImageButton icon_tela, icon_fones,  icon_pelicula, icon_capas;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

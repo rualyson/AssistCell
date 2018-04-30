@@ -1,20 +1,19 @@
 package com.online.assistencia.assistcell;
 
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.app.Activity;
 import android.widget.ExpandableListView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class GrupoCases extends Activity {
+public class GrupoCarregadores extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grupo_cases);
-
+        setContentView(R.layout.activity_grupo_carregadores);
         ExpandableListView elvCompra = (ExpandableListView) findViewById(R.id.elvCompra);
 
         // cria os grupos
