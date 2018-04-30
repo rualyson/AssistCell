@@ -13,6 +13,8 @@ import android.widget.Toast;
 public class FormReservaActivity extends AppCompatActivity {
     //Criação dos Objetos
     EditText editNome;
+    EditText editMarca;
+    EditText editModelo;
     EditText editTelefone;
     EditText editEmail;
     EditText editData;
@@ -24,7 +26,10 @@ public class FormReservaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_reserva);
 
         //Vinculando os objetos aos ids
+        editMarca = (EditText) findViewById(R.id.editMarca);
+        editMarca = (EditText) findViewById(R.id.editModelo);
         editNome = (EditText) findViewById(R.id.editNome);
+
         editTelefone = (EditText) findViewById(R.id.editTelefone);
         editEmail = (EditText) findViewById(R.id.editEmail);
         editData = (EditText) findViewById(R.id.editData);
@@ -33,8 +38,8 @@ public class FormReservaActivity extends AppCompatActivity {
         btnReservar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (editNome.getText().length() == 0 || (editTelefone.getText().length() == 0) || (editEmail.getText().length() == 0) || (editData.getText().length() == 0)) {
-                    Toast.makeText(getApplication(), "Os campos Nome, Telefone, Email e Data são obrigatórios!",
+                if (editMarca.getText().length() == 0 ||editModelo.getText().length() == 0 ||editNome.getText().length() == 0 || (editTelefone.getText().length() == 0) || (editEmail.getText().length() == 0) || (editData.getText().length() == 0)) {
+                    Toast.makeText(getApplication(), "Os campos Marca do produto, Modelo, Seu Nome, Telefone, Email e Data da reserva são obrigatórios!",
                             Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(getApplication(),
