@@ -79,7 +79,7 @@ public class TabCatalogo extends Fragment{
             }
         });
         icon_capas = (ImageButton)view.findViewById(R.id.icon_capas);
-        icon_fones.setOnClickListener(new View.OnClickListener() {
+        icon_capas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), GrupoCases.class));
