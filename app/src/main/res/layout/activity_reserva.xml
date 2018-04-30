@@ -8,12 +8,12 @@
     tools:context=".FormReservaActivity"
     android:id="@+id/linearLayout">
 
-
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        tools:layout_editor_absoluteY="1dp"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,6 +29,43 @@
                 tools:layout_conversion_absoluteWidth="384dp"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="4dp" />
+
+            <TextView
+                android:id="@+id/labelMarca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Marca do produto:" />
+
+            <EditText
+                android:id="@+id/editMarca"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Informe a marca do produto"
+                tools:layout_conversion_absoluteHeight="72dp"
+                tools:layout_conversion_absoluteWidth="384dp"
+                tools:layout_editor_absoluteX="38dp"
+                tools:layout_editor_absoluteY="81dp" />
+
+            <TextView
+                android:id="@+id/labelModelo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Modelo do produto:" />
+
+            <EditText
+                android:id="@+id/editModelo"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Informe o modelo do produto"
+                tools:layout_conversion_absoluteHeight="72dp"
+                tools:layout_conversion_absoluteWidth="384dp"
+                tools:layout_editor_absoluteX="38dp"
+                tools:layout_editor_absoluteY="81dp" />
+
 
             <TextView
                 android:id="@+id/labelNome"
@@ -102,21 +139,6 @@
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="307dp" />
 
-            <TextView
-                android:id="@+id/labelProduto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                tools:text="Informe o produto requerido:" />
-
-            <EditText
-                android:id="@+id/editProduto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Produto"
-                android:inputType="textPersonName" />
-
             <Button
                 android:id="@+id/btnReservar"
                 android:layout_width="match_parent"
@@ -130,7 +152,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editText5"
                 app:layout_constraintEnd_toEndOf="@+id/editText6"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/editProduto"
+                app:layout_constraintStart_toStartOf="@+id/editText"
                 app:layout_constraintTop_toBottomOf="@+id/editText7"
                 app:layout_constraintVertical_bias="0.0"
                 tools:layout_conversion_absoluteHeight="60dp"
