@@ -31,7 +31,9 @@
         <activity android:name=".GrupoPeliculas" />
         <activity android:name=".GrupoCases" />
         <activity android:name=".GrupoFones" />
-        <activity android:name=".GrupoTelas"></activity>
+        <activity android:name=".GrupoTelas" />
+        <activity android:name=".GrupoDiversos" />
+        <activity android:name=".GrupoCarregadores"></activity>
     </application>
 
 </manifest>
