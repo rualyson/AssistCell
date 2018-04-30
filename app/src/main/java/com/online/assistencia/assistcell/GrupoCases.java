@@ -52,10 +52,8 @@ public class GrupoCases extends Activity {
         // define o apadtador do ExpandableListView
         elvCompra.setAdapter(adaptador);
     }
-<<<<<<< HEAD
-    public void telaReserv(View view){
-=======
     public void onClick(View v) {
+        
     }
 
     public void telaReserv(View view){
@@ -63,9 +61,3 @@ public class GrupoCases extends Activity {
         Intent intent = new Intent(GrupoCases.this, FormReservaActivity.class);
         startActivity(intent);
     }
->>>>>>> master
-
-        Intent intent = new Intent(GrupoCases.this, FormReservaActivity.class);
-        startActivity(intent);
-    }
-}
