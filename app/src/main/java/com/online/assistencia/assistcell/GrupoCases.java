@@ -16,7 +16,6 @@ public class GrupoCases extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grupo_cases);
-
         ExpandableListView elvCompra = (ExpandableListView) findViewById(R.id.elvCompra);
 
         // cria os grupos
@@ -53,7 +52,18 @@ public class GrupoCases extends Activity {
         // define o apadtador do ExpandableListView
         elvCompra.setAdapter(adaptador);
     }
+<<<<<<< HEAD
     public void telaReserv(View view){
+=======
+    public void onClick(View v) {
+    }
+
+    public void telaReserv(View view){
+
+        Intent intent = new Intent(GrupoCases.this, FormReservaActivity.class);
+        startActivity(intent);
+    }
+>>>>>>> master
 
         Intent intent = new Intent(GrupoCases.this, FormReservaActivity.class);
         startActivity(intent);

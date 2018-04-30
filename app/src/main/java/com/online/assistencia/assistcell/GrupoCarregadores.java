@@ -1,8 +1,8 @@
 package com.online.assistencia.assistcell;
 
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.View;
 import android.widget.ExpandableListView;
 
@@ -10,13 +10,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class GrupoFones extends Activity {
+public class GrupoCarregadores extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grupo_fones);
-
+        setContentView(R.layout.activity_grupo_carregadores);
         ExpandableListView elvCompra = (ExpandableListView) findViewById(R.id.elvCompra);
 
         // cria os grupos
@@ -53,15 +52,13 @@ public class GrupoFones extends Activity {
         // define o apadtador do ExpandableListView
         elvCompra.setAdapter(adaptador);
     }
-<<<<<<< HEAD
-=======
+
     public void onClick(View v) {
     }
 
->>>>>>> master
     public void telaReserv(View view){
 
-        Intent intent = new Intent(GrupoFones.this, FormReservaActivity.class);
+        Intent intent = new Intent(GrupoCarregadores.this, FormReservaActivity.class);
         startActivity(intent);
     }
 }
