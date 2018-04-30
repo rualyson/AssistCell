@@ -1,5 +1,6 @@
 package com.online.assistencia.assistcell;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
@@ -53,8 +54,12 @@ public class GrupoTelas extends Activity implements View.OnClickListener{
         elvCompra.setAdapter(adaptador);
     }
 
-    @Override
     public void onClick(View v) {
+    }
 
+    public void telaReserv(View view){
+
+        Intent intent = new Intent(GrupoTelas.this, FormReservaActivity.class);
+        startActivity(intent);
     }
 }

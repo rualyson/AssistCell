@@ -11,14 +11,9 @@ import android.widget.ImageButton;
 
 
 public class TabCatalogo extends Fragment{
-<<<<<<< HEAD
-    ImageButton icon_tela;
-    ImageButton icon_fones;
-    ImageButton icon_capas;
-    ImageButton icon_pelicula;
-=======
+
     ImageButton icon_tela, icon_fones,  icon_pelicula, icon_capas, icon_carregador, icon_diversos;
->>>>>>> master
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,7 +36,7 @@ public class TabCatalogo extends Fragment{
         });
 
         icon_capas = (ImageButton)view.findViewById(R.id.icon_capas);
-        icon_fones.setOnClickListener(new View.OnClickListener() {
+        icon_capas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), GrupoCases.class));
@@ -56,13 +51,11 @@ public class TabCatalogo extends Fragment{
             }
         });
 
-<<<<<<< HEAD
-=======
         icon_carregador = (ImageButton)view.findViewById(R.id.icon_carregador);
         icon_carregador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), GrupoCarregador.class));
+                startActivity(new Intent(getActivity(), GrupoCarregadores.class));
             }
 
         });
@@ -74,7 +67,6 @@ public class TabCatalogo extends Fragment{
             }
         });
 
->>>>>>> master
         return view;
     }
 

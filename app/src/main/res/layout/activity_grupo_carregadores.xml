@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GrupoCarregadores">
+    android:orientation="horizontal">
 
-</android.support.constraint.ConstraintLayout>
+    <ExpandableListView
+        android:id="@+id/elvCompra"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:layout_alignParentStart="true"/>
+
+    <Button
+        android:id="@+id/btnResTela"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reservar mercadoria"
+        android:textAllCaps="true"
+        android:onClick="telaReserv"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

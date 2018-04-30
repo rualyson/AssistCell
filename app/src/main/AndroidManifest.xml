@@ -33,6 +33,7 @@
         <activity android:name=".GrupoFones" />
         <activity android:name=".GrupoTelas" />
         <activity android:name=".GrupoDiversos" />
+        <activity android:name=".FormReservaActivity" />
         <activity android:name=".GrupoCarregadores"></activity>
     </application>
 

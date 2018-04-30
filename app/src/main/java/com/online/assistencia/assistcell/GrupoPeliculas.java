@@ -1,14 +1,16 @@
 package com.online.assistencia.assistcell;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.View;
 import android.widget.ExpandableListView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class GrupoPeliculas extends Activity {
+public class    GrupoPeliculas extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,5 +53,12 @@ public class GrupoPeliculas extends Activity {
         // define o apadtador do ExpandableListView
         elvCompra.setAdapter(adaptador);
     }
+    public void onClick(View v) {
+    }
 
+    public void telaReserv(View view){
+
+        Intent intent = new Intent(GrupoPeliculas.this, FormReservaActivity.class);
+        startActivity(intent);
+    }
 }

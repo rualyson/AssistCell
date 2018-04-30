@@ -1,8 +1,9 @@
 package com.online.assistencia.assistcell;
 
-<<<<<<< HEAD
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ExpandableListView;
 
 import java.util.ArrayList;
@@ -35,7 +36,6 @@ public class GrupoDiversos extends AppCompatActivity {
         lstAdaptador.add(new Produto("chip", 10.0));
 
 
-
         // cria o "relacionamento" dos grupos com seus itens
         HashMap<String, List<Produto>> lstItensGrupo = new HashMap<>();
         lstItensGrupo.put(lstGrupos.get(0), lstChips);
@@ -46,7 +46,12 @@ public class GrupoDiversos extends AppCompatActivity {
         // define o apadtador do ExpandableListView
         elvCompra.setAdapter(adaptador);
     }
-=======
-public class GrupoDiversos {
->>>>>>> master
+    public void onClick(View v) {
+    }
+
+    public void telaReserv(View view){
+
+        Intent intent = new Intent(GrupoDiversos.this, FormReservaActivity.class);
+        startActivity(intent);
+    }
 }

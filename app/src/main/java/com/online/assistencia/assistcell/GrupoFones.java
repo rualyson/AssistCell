@@ -1,7 +1,9 @@
 package com.online.assistencia.assistcell;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.View;
 import android.widget.ExpandableListView;
 
 import java.util.ArrayList;
@@ -51,5 +53,12 @@ public class GrupoFones extends Activity {
         // define o apadtador do ExpandableListView
         elvCompra.setAdapter(adaptador);
     }
+    public void onClick(View v) {
+    }
 
+    public void telaReserv(View view){
+
+        Intent intent = new Intent(GrupoFones.this, FormReservaActivity.class);
+        startActivity(intent);
+    }
 }
