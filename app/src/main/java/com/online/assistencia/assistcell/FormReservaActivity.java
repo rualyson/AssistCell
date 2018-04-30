@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,8 @@ import android.widget.Toast;
 
 public class FormReservaActivity extends AppCompatActivity {
     //Criação dos Objetos
+    EditText editMarca;
+    EditText editModelo;
     EditText editNome;
     EditText editMarca;
     EditText editModelo;
@@ -20,6 +23,7 @@ public class FormReservaActivity extends AppCompatActivity {
     EditText editData;
     Button btnReservar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +31,8 @@ public class FormReservaActivity extends AppCompatActivity {
 
         //Vinculando os objetos aos ids
         editMarca = (EditText) findViewById(R.id.editMarca);
-        editMarca = (EditText) findViewById(R.id.editModelo);
+        editModelo = (EditText) findViewById(R.id.editModelo);
         editNome = (EditText) findViewById(R.id.editNome);
-
         editTelefone = (EditText) findViewById(R.id.editTelefone);
         editEmail = (EditText) findViewById(R.id.editEmail);
         editData = (EditText) findViewById(R.id.editData);
@@ -50,3 +53,4 @@ public class FormReservaActivity extends AppCompatActivity {
         });
     }
 }
+
