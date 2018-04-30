@@ -4,10 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
-<<<<<<< HEAD
-import android.widget.AdapterView;
-=======
->>>>>>> master
 import android.widget.ExpandableListView;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,14 +56,6 @@ public class    GrupoPeliculas extends Activity {
 
     }
 
-    public void onClick(View v) {
-    }
-
-    public void telaReserv(View view){
-
-        Intent intent = new Intent(GrupoPeliculas.this, FormReservaActivity.class);
-        startActivity(intent);
-    }
     public void onClick(View v) {
     }
 

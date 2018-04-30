@@ -53,12 +53,9 @@ public class GrupoFones extends Activity {
         // define o apadtador do ExpandableListView
         elvCompra.setAdapter(adaptador);
     }
-<<<<<<< HEAD
-=======
     public void onClick(View v) {
     }
 
->>>>>>> master
     public void telaReserv(View view){
 
         Intent intent = new Intent(GrupoFones.this, FormReservaActivity.class);
