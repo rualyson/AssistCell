@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,6 +54,9 @@ public class GrupoTelas extends Activity implements View.OnClickListener{
         Adaptador adaptador = new Adaptador(this, lstGrupos, lstItensGrupo);
         // define o apadtador do ExpandableListView
         elvCompra.setAdapter(adaptador);
+
+
+
     }
 
     public void onClick(View v) {

@@ -53,6 +53,7 @@ public class GrupoCases extends Activity {
         elvCompra.setAdapter(adaptador);
     }
     public void onClick(View v) {
+        
     }
 
     public void telaReserv(View view){
@@ -60,5 +61,4 @@ public class GrupoCases extends Activity {
         Intent intent = new Intent(GrupoCases.this, FormReservaActivity.class);
         startActivity(intent);
     }
-
 }
