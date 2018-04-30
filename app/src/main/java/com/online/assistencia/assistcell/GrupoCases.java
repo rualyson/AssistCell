@@ -61,3 +61,4 @@ public class GrupoCases extends Activity {
         Intent intent = new Intent(GrupoCases.this, FormReservaActivity.class);
         startActivity(intent);
     }
+}
