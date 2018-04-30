@@ -95,6 +95,9 @@ public class Inicio extends AppCompatActivity implements NavigationView.OnNaviga
         }else if (id == R.id.nav_login) {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
+        }else if (id == R.id.nav_solicitacao) {
+            Intent intent = new Intent(this, Solicitacao.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

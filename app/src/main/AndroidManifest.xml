@@ -34,7 +34,8 @@
         <activity android:name=".FormReservaActivity" />
         <activity android:name=".GrupoTelas" />
         <activity android:name=".GrupoDiversos" />
-        <activity android:name=".GrupoCarregadores"></activity>
+        <activity android:name=".GrupoCarregadores" />
+        <activity android:name=".Solicitacao" />
     </application>
 
 </manifest>
