@@ -1,19 +1,23 @@
 package com.online.assistencia.assistcell;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
 public class FormReservaActivity extends AppCompatActivity {
-
     //Criação dos Objetos
     EditText editMarca;
     EditText editModelo;
     EditText editNome;
+    EditText editMarca;
+    EditText editModelo;
     EditText editTelefone;
     EditText editEmail;
     EditText editData;
@@ -49,8 +53,4 @@ public class FormReservaActivity extends AppCompatActivity {
         });
     }
 }
-
-
-
-
 

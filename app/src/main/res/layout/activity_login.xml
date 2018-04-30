@@ -79,12 +79,11 @@
 
             <Button
                 android:id="@+id/btnEntrar"
-                style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Entrar"
                 android:background="@color/colorPrimary"
+                android:text="Entrar"
                 android:textStyle="bold" />
 
         </LinearLayout>

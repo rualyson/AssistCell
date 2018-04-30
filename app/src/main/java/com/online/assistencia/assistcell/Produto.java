@@ -6,6 +6,7 @@ public class Produto {
     private Double valor;
 
     public Produto(String nome, Double valor) {
+        super();
         this.nome = nome;
         this.valor = valor;
     }

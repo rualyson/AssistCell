@@ -1,12 +1,17 @@
 package com.online.assistencia.assistcell;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.List;
@@ -43,7 +48,7 @@ public class Adaptador extends BaseExpandableListAdapter {
     }
 
     @Override
-    public Object getChild(int groupPosition, int childPosition) {
+    public Object  getChild(int groupPosition, int childPosition) {
         // retorna um item do grupo
         return lstItensGrupos.get(getGroup(groupPosition)).get(childPosition);
     }
@@ -93,7 +98,6 @@ public class Adaptador extends BaseExpandableListAdapter {
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         // cria os subitens (itens dos grupos)
-
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(
                     Context.LAYOUT_INFLATER_SERVICE);
@@ -106,24 +110,6 @@ public class Adaptador extends BaseExpandableListAdapter {
         Produto produto = (Produto) getChild(groupPosition, childPosition);
         tvItem.setText(produto.getNome());
         tvValor.setText(String.valueOf(produto.getValor()));
-
-        Button btn_reserva= (Button)convertView.findViewById(R.id.btnReserv);
-
-        btn_reserva.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                //do something
-
-            }
-        });
-        btn_reserva.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                //do something
-                notifyDataSetChanged();
-            }
-        });
-
         return convertView;
     }
 
@@ -132,4 +118,7 @@ public class Adaptador extends BaseExpandableListAdapter {
         // retorna se o subitem (item do grupo) é selecionável
         return true;
     }
+
+
+
 }
