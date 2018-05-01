@@ -7,15 +7,15 @@
         <item
             android:id="@+id/nav_inicio"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="Início" />
+            android:title="Início(Em construção)" />
         <item
             android:id="@+id/nav_login"
             android:icon="@drawable/ic_person_outline_black_24dp"
-            android:title="Login" />
+            android:title="Login(Em construção)" />
         <item
             android:id="@+id/nav_orcamento"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Orçamento" />
+            android:title="Orçamento(Em construção)" />
         <item
             android:id="@+id/nav_solicitacao"
             android:icon="@drawable/ic_create_black_24dp"
