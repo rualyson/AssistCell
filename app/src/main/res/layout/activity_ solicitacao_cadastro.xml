@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SOLICITAÇÃO DE CADASTRO"
+            android:textSize="25dp"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center" />
+    <!-- Entradas de Cadastro -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="35dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="3dp"
+                android:text="Nome:"/>
+            <EditText
+                android:layout_width="380dp"
+                android:layout_height="35dp"
+                android:inputType="text"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="3dp"
+                android:text="Endereço:"/>
+            <EditText
+                android:layout_width="380dp"
+                android:layout_height="35dp"
+                android:inputType="text"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Telefone:"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="3dp"/>
+            <EditText
+                android:layout_width="380dp"
+                android:layout_height="35dp"
+                android:inputType="phone"/>
+
+
+        <!-- Botões  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="70dp">
+
+                <Button
+                    android:id="@+id/bt_cadastrar"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="solicitar"/>
+                <Button
+                    android:id="@+id/bt_cancelar"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:text="cancelar"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.constraint.ConstraintLayout>
