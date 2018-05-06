@@ -49,11 +49,11 @@
 
                 <AutoCompleteTextView
 
-                    android:id="@+id/email"
+                    android:id="@+id/login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="E-mail"
-                    android:inputType="textEmailAddress"
+                    android:hint="Login"
+                    android:inputType="textAutoComplete"
                     android:maxLines="1"
                     android:singleLine="true" />
 
@@ -84,6 +84,16 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
                 android:text="Entrar"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnSolic"
+                android:onClick="doSomething"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="Solicitar acesso"
                 android:textStyle="bold" />
 
         </LinearLayout>

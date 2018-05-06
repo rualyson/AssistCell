@@ -40,6 +40,17 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="3dp"
+                android:text="CPF:"/>
+            <EditText
+                android:layout_width="380dp"
+                android:layout_height="35dp"
+                android:inputType="number"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="3dp"
                 android:text="Endereço:"/>
@@ -72,11 +83,14 @@
                     android:id="@+id/bt_cadastrar"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
                     android:text="solicitar"/>
                 <Button
                     android:id="@+id/bt_cancelar"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:layout_marginLeft="5dp"
                     android:text="cancelar"/>
 
             </LinearLayout>
