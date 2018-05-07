@@ -35,7 +35,9 @@
         <activity android:name=".GrupoTelas" />
         <activity android:name=".GrupoDiversos" />
         <activity android:name=".GrupoCarregadores" />
+        <activity android:name=".RequestCadFunc" />
         <activity android:name=".Solicitacao" />
+        <activity android:name=".SolicitLogin"></activity>
     </application>
 
 </manifest>
