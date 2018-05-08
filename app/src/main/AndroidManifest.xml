@@ -36,7 +36,8 @@
         <activity android:name=".GrupoDiversos" />
         <activity android:name=".GrupoCarregadores" />
         <activity android:name=".Solicitacao" />
-        <activity android:name=".SolicitLogin"></activity>
+        <activity android:name=".SolicitLogin" />
+        <activity android:name=".EscCadastro"></activity>
     </application>
 
 </manifest>
