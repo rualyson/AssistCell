@@ -33,8 +33,8 @@
                 android:layout_marginLeft="3dp"
                 android:text="Nome:"/>
             <EditText
-                android:layout_width="380dp"
-                android:layout_height="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
                 android:inputType="text"/>
 
             <TextView
@@ -44,9 +44,20 @@
                 android:layout_marginLeft="3dp"
                 android:text="CPF:"/>
             <EditText
-                android:layout_width="380dp"
-                android:layout_height="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
                 android:inputType="number"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="3dp"
+                android:text="E-mail:"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:inputType="textEmailAddress"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -55,8 +66,8 @@
                 android:layout_marginLeft="3dp"
                 android:text="Endereço:"/>
             <EditText
-                android:layout_width="380dp"
-                android:layout_height="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
                 android:inputType="text"/>
 
             <TextView
@@ -66,8 +77,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="3dp"/>
             <EditText
-                android:layout_width="380dp"
-                android:layout_height="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
                 android:inputType="phone"/>
 
 
@@ -77,19 +88,19 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_marginTop="70dp">
+                android:layout_marginTop="45dp">
 
                 <Button
                     android:id="@+id/bt_cadastrar"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
+                    android:background="@drawable/rounded_button_transparent"
                     android:text="solicitar"/>
                 <Button
                     android:id="@+id/bt_cancelar"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
+                    android:background="@drawable/rounded_button_transparent"
                     android:layout_marginLeft="5dp"
                     android:text="cancelar"/>
 
