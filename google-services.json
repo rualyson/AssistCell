@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "813145600474",
+    "firebase_url": "https://assistcell-b466d.firebaseio.com",
+    "project_id": "assistcell-b466d",
+    "storage_bucket": "assistcell-b466d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813145600474:android:f8b8944b53c9b01c",
+        "android_client_info": {
+          "package_name": "com.online.assistencia.assistcell"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "813145600474-c1mac1ham6qn2dv3mp79hdfng4231t7v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC90lmNLySmhJkp6OQhpHuFGYK0Hebjztg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
