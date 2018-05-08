@@ -11,17 +11,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CADASTRO DE FUNCIONÁRIOS"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="2dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="2dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="478dp"
         android:orientation="vertical"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="33dp"
-        tools:ignore="MissingConstraints">
+        tools:layout_editor_absoluteY="33dp">
 
         <TextView
             android:id="@+id/textView10"
@@ -58,6 +58,20 @@
             android:inputType="number" />
 
         <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Digite o endereço:" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Informe o endereço"
+            android:inputType="textPersonName" />
+
+        <TextView
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,26 +86,18 @@
             android:inputType="phone" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/textView15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Digite o endereço:" />
+            android:text="Digite o e-mail:" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/editText7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint=" Informe a cidade"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/editText6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Informe a rua e o número"
-            android:inputType="textPersonName" />
+            android:hint="Informe o e-mail"
+            android:inputType="textEmailAddress" />
 
         <TextView
             android:id="@+id/textView14"
