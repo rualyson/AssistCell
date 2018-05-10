@@ -63,11 +63,19 @@ public class FormReservaActivity extends AppCompatActivity {
 
                     Toast.makeText(getApplication(),
                             "Reservado com Sucesso!", Toast.LENGTH_LONG).show();
-
+                    limparcampos();
                 }
             }
         });
         inicializarFirebase();
+    }
+    public void limparcampos(){
+        editModelo.setText("");
+        editMarca.setText("");
+        editData.setText("");
+        editTelefone.setText("");
+        editNome.setText("");
+        editEmail.setText("");
     }
 
     private void inicializarFirebase() {

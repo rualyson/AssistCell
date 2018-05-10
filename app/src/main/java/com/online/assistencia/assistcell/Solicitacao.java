@@ -63,6 +63,7 @@ public class Solicitacao extends AppCompatActivity {
                     databaseReference.child("Solicitacao").child(newSolicitacao.getId()).setValue(newSolicitacao);
                     Toast.makeText(getApplication(),
                             "Produto solicitado com Sucesso!", Toast.LENGTH_LONG).show();
+                    limparcampos();
                 }
             }
         });
@@ -74,6 +75,14 @@ public class Solicitacao extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference =  firebaseDatabase.getReference();
     }
-
+    public void limparcampos(){
+        editModelo.setText("");
+        editMarca.setText("");
+        editProduto.setText("");
+        editTelefone.setText("");
+        editQuant.setText("");
+        editNome.setText("");
+        editEmail.setText("");
+    }
 
 }
