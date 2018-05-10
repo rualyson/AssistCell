@@ -10,6 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
+
 public class FormReservaActivity extends AppCompatActivity {
     //Criação dos Objetos
     EditText editNome;
@@ -19,6 +25,9 @@ public class FormReservaActivity extends AppCompatActivity {
     EditText editEmail;
     EditText editData;
     Button btnReservar;
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +50,30 @@ public class FormReservaActivity extends AppCompatActivity {
                     Toast.makeText(getApplication(), "Os campos Marca do produto, Modelo, Seu Nome, Telefone, Email e Data da reserva são obrigatórios!",
                             Toast.LENGTH_LONG).show();
                 } else {
+                    NewReserva newReserva = new NewReserva();
+                    newReserva.setId(UUID.randomUUID().toString());
+                    newReserva.setMarca(editMarca.getText().toString());
+                    newReserva.setModelo(editModelo.getText().toString());
+                    newReserva.setData(editData.getText().toString());
+                    newReserva.setTelefone(editTelefone.getText().toString());
+                    newReserva.setNome(editNome.getText().toString());
+                    newReserva.setEmail(editEmail.getText().toString());
+                    databaseReference.child("Reservas").child(newReserva.getId()).setValue(newReserva);
+
+
                     Toast.makeText(getApplication(),
                             "Reservado com Sucesso!", Toast.LENGTH_LONG).show();
 
                 }
             }
         });
+        inicializarFirebase();
     }
+
+    private void inicializarFirebase() {
+        FirebaseApp.initializeApp(FormReservaActivity.this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference =  firebaseDatabase.getReference();
+    }
+
 }
