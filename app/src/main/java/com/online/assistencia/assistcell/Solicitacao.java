@@ -7,6 +7,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
+
 public class Solicitacao extends AppCompatActivity {
     EditText editMarca;
     EditText editModelo;
@@ -16,6 +22,9 @@ public class Solicitacao extends AppCompatActivity {
     EditText editEmail;
     EditText editTelefone;
     Button botEnviar;
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +51,29 @@ public class Solicitacao extends AppCompatActivity {
                     //não coloquei email como campo obrigatório porquê
                     // o cliente que deseja um determinado produto pode não ter email, mas com certeza terá um telefone
                 } else {
+                    NewSolicitacao newSolicitacao = new NewSolicitacao();
+                    newSolicitacao.setId(UUID.randomUUID().toString());
+                    newSolicitacao.setMarca(editMarca.getText().toString());
+                    newSolicitacao.setModelo(editModelo.getText().toString());
+                    newSolicitacao.setProduto(editProduto.getText().toString());
+                    newSolicitacao.setQuant(editQuant.getText().toString());
+                    newSolicitacao.setTelefone(editTelefone.getText().toString());
+                    newSolicitacao.setNome(editNome.getText().toString());
+                    newSolicitacao.setEmail(editEmail.getText().toString());
+                    databaseReference.child("Solicitacao").child(newSolicitacao.getId()).setValue(newSolicitacao);
                     Toast.makeText(getApplication(),
                             "Produto solicitado com Sucesso!", Toast.LENGTH_LONG).show();
                 }
             }
         });
+        inicializarFirebase();
     }
+
+    private void inicializarFirebase() {
+        FirebaseApp.initializeApp(Solicitacao.this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference =  firebaseDatabase.getReference();
+    }
+
+
 }
