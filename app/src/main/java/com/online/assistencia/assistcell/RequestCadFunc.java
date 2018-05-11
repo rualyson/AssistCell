@@ -82,14 +82,4 @@ public class RequestCadFunc extends AppCompatActivity {
         databaseReference =  firebaseDatabase.getReference();
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) { //Botão adicional na ToolBar
-        switch (item.getItemId()) {
-            case android.R.id.home:  //ID do seu botão
-                startActivity(new Intent(this, LoginActivity.class));
-                finishAffinity();  //Matar activity
-                break;
-            default:break;
-        }
-        return true;
-    }
 }
