@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="349dp"
+        android:layout_height="33dp"
+        android:text="Por favor, preencha os dados a seguir para solicitar um orçamento de Serviço"
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="380dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Marca do Aparelho"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="380dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Modelo do Aparelho"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="130dp" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="380dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Descrição do estado físico do Aparelho"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="175dp" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="380dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Descrição do Problema"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="221dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SMS"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="385dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="417dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/telefonema"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="385dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Local da Assistência"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="417dp" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="380dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="271dp" />
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="380dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Telefone de Contato"
+        android:inputType="phone"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="316dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="359dp"
+        android:layout_height="20dp"
+        android:text="  Selecione uma ou mais formas de receber o orçamento"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="358dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="380dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="36dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="80dp"
+        android:layout_height="38dp"
+        android:text="Enviar"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="459dp" />
+
+</android.support.constraint.ConstraintLayout>
