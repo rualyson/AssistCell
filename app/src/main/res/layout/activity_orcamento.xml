@@ -93,7 +93,7 @@
                 tools:layout_editor_absoluteY="153dp" />
 
             <EditText
-                android:id="@+id/editE-mail"
+                android:id="@+id/editEmailOrc"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
                 android:ems="10"
@@ -108,7 +108,36 @@
                 android:id="@+id/labelData"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
-                android:text="  Digite informando como gostaria de receber seu orÃ§amento" />
+                android:layout_marginLeft="4dp"
+                android:text="Digite informando como gostaria de receber seu orçamento:" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/rbSMS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="SMS" />
+
+                <RadioButton
+                    android:id="@+id/rbEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Email" />
+
+                <RadioButton
+                    android:id="@+id/rbBuscarAssist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Buscar na assistência" />
+            </RadioGroup>
 
             <EditText
                 android:id="@+id/editEnviorcamento"
@@ -132,6 +161,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Enviar"
+                android:background="@drawable/rounded_button_transparent"
                 app:layout_constraintBottom_toBottomOf="@+id/editText5"
                 app:layout_constraintEnd_toEndOf="@+id/editText6"
                 app:layout_constraintHorizontal_bias="0.0"
