@@ -17,12 +17,13 @@ import java.util.List;
 
 public class SolicitLogin extends AppCompatActivity {
 
-    ListView listV_dados;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
-    List<RequestCadFunc> listFuncionario = new ArrayList<RequestCadFunc>();
-    ArrayAdapter<RequestCadFunc> arrayAdapterFuncionario;
+    ListView listV_dados;
+
+    private List <RequestCadFunc> listFuncionario = new ArrayList <RequestCadFunc>();
+    private ArrayAdapter <RequestCadFunc> arrayAdapterFuncionario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,24 +34,17 @@ public class SolicitLogin extends AppCompatActivity {
 
         inicializarFirebase();
         eventoDatabase();
-    }
 
-    private void inicializarFirebase() {
-        FirebaseApp.initializeApp(SolicitLogin.this);
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        firebaseDatabase.setPersistenceEnabled(true);
-        databaseReference =  firebaseDatabase.getReference();
     }
 
     private void eventoDatabase() {
-        databaseReference.child("RequestCadFunc").addValueEventListener(new ValueEventListener(){
-
+        databaseReference.child("Requisicoes").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 listFuncionario.clear();
-                for(DataSnapshot objSnapshot:dataSnapshot.getChildren()){
-                    RequestCadFunc r = objSnapshot.getValue(RequestCadFunc.class);
-                    listFuncionario.add(r);
+                for (DataSnapshot objSnapshot: dataSnapshot.getChildren()){
+                    RequestCadFunc requestCadFunc = objSnapshot.getValue(RequestCadFunc.class);
+                    listFuncionario.add(requestCadFunc);
                 }
                 arrayAdapterFuncionario = new ArrayAdapter<RequestCadFunc>(SolicitLogin.this,
                         android.R.layout.simple_list_item_1, listFuncionario);
@@ -62,5 +56,12 @@ public class SolicitLogin extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void inicializarFirebase() {
+        FirebaseApp.initializeApp(SolicitLogin.this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabase.setPersistenceEnabled(true);
+        databaseReference =  firebaseDatabase.getReference();
     }
 }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.view.MenuItem;
 import android.view.View;
 
 public class EscCadastro extends AppCompatActivity implements View.OnClickListener{
@@ -14,6 +15,10 @@ public class EscCadastro extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_esc_cadastro);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostra o botão
+        getSupportActionBar().setHomeButtonEnabled(true);      //Faz funcionar o botão
+        getSupportActionBar().setTitle("Cadastro de Funcionários");//Titulo para ser exibido na Action Bar
 
         solicitCadastro = (CardView) findViewById(R.id.RequestCad);
         solicitCadastro.setOnClickListener(this);
@@ -36,5 +41,15 @@ public class EscCadastro extends AppCompatActivity implements View.OnClickListen
                 startActivity(i);
                 break;
         }
+    }
+    public boolean onOptionsItemSelected(MenuItem item) { //Botão adicional na ToolBar
+        switch (item.getItemId()) {
+            case android.R.id.home:  //ID do seu botão
+                startActivity(new Intent(this, DashADM.class));
+                finishAffinity();  //Matar activity
+                break;
+            default:break;
+        }
+        return true;
     }
 }

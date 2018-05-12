@@ -57,7 +57,7 @@ public class RequestCadFunc extends AppCompatActivity {
                     newFuncionario.setEndereco(editEndereco.getText().toString());
                     newFuncionario.setEmail(editEmailFunc.getText().toString());
                     newFuncionario.setTelefone(editContact.getText().toString());
-                    databaseReference.child("Requisicao_cadastro").child(newFuncionario.getId()).setValue(newFuncionario);
+                    databaseReference.child("Requisicoes").child(newFuncionario.getId()).setValue(newFuncionario);
 
 
                     Toast.makeText(getApplication(),
