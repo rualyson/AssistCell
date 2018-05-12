@@ -9,6 +9,7 @@ import android.view.View;
 public class EscCadastro extends AppCompatActivity implements View.OnClickListener{
 
     private CardView solicitCadastro;
+    private CardView cadastroFuncionario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +17,9 @@ public class EscCadastro extends AppCompatActivity implements View.OnClickListen
 
         solicitCadastro = (CardView) findViewById(R.id.RequestCad);
         solicitCadastro.setOnClickListener(this);
+        cadastroFuncionario = (CardView) findViewById(R.id.CadFunc);
+        cadastroFuncionario.setOnClickListener(this);
+
     }
 
     @Override
@@ -25,6 +29,10 @@ public class EscCadastro extends AppCompatActivity implements View.OnClickListen
         switch (v.getId()) {
             case R.id.RequestCad:
                 i = new Intent(this, SolicitLogin.class);
+                startActivity(i);
+                break;
+            case R.id.CadFunc:
+                i = new Intent(this, CadastroFuncionarios.class);
                 startActivity(i);
                 break;
         }
