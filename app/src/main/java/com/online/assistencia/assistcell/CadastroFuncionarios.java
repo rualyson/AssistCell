@@ -53,7 +53,9 @@ public class CadastroFuncionarios extends AppCompatActivity implements View.OnCl
         cadastrar = (Button) findViewById(R.id.buttonCadastrar);
 
         cadastrar.setOnClickListener(this);
+        }
     }
+
     private void registrerUser(){
         String email = emailFunc.getText().toString().trim();
         String senha = senhaFunc.getText().toString().trim();
@@ -95,6 +97,14 @@ public class CadastroFuncionarios extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View view) {
         if(view == cadastrar){
+                if (nomeFunc.getText().length() == 0 || cpfFunc.getText().length() == 0 || enderecoFunc.getText().length() == 0 || (telefoneFunc.getText().length() == 0)) {
+                    Toast.makeText(getApplication(), "Os campos Nome, CPF, Endereço e Telefone são obrigatórios, por favor preencher corretamente!",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+            registrerUser();
+    }
+}
             if (nomeFunc.getText().length() == 0 || cpfFunc.getText().length() == 0 || enderecoFunc.getText().length() == 0 || (telefoneFunc.getText().length() == 0)) {
                 Toast.makeText(getApplication(), "Os campos Nome, CPF, Endereço e Telefone são obrigatórios, por favor preencher corretamente!",
                         Toast.LENGTH_LONG).show();
