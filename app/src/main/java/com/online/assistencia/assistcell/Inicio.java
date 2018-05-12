@@ -68,16 +68,13 @@ public class Inicio extends AppCompatActivity implements NavigationView.OnNaviga
         getMenuInflater().inflate(R.menu.inicio, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }*/
 

@@ -1,11 +1,19 @@
 package com.online.assistencia.assistcell;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
 
 public class Solicitacao extends AppCompatActivity {
     EditText editMarca;
@@ -17,10 +25,17 @@ public class Solicitacao extends AppCompatActivity {
     EditText editTelefone;
     Button botEnviar;
 
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solicitacao);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostra o botão
+        getSupportActionBar().setHomeButtonEnabled(true);      //Faz funcionar o botão
+        getSupportActionBar().setTitle("Solicitação de Produtos");//Titulo para ser exibido na Action Bar
 
         editMarca = (EditText) findViewById(R.id.editMarca);
         editModelo = (EditText) findViewById(R.id.editModelo);
@@ -42,10 +57,50 @@ public class Solicitacao extends AppCompatActivity {
                     //não coloquei email como campo obrigatório porquê
                     // o cliente que deseja um determinado produto pode não ter email, mas com certeza terá um telefone
                 } else {
+                    NewSolicitacao newSolicitacao = new NewSolicitacao();
+                    newSolicitacao.setId(UUID.randomUUID().toString());
+                    newSolicitacao.setMarca(editMarca.getText().toString());
+                    newSolicitacao.setModelo(editModelo.getText().toString());
+                    newSolicitacao.setProduto(editProduto.getText().toString());
+                    newSolicitacao.setQuant(editQuant.getText().toString());
+                    newSolicitacao.setTelefone(editTelefone.getText().toString());
+                    newSolicitacao.setNome(editNome.getText().toString());
+                    newSolicitacao.setEmail(editEmail.getText().toString());
+                    databaseReference.child("Solicitacao").child(newSolicitacao.getId()).setValue(newSolicitacao);
                     Toast.makeText(getApplication(),
                             "Produto solicitado com Sucesso!", Toast.LENGTH_LONG).show();
+                    limparcampos();
                 }
             }
         });
+        inicializarFirebase();
     }
+
+    private void inicializarFirebase() {
+        FirebaseApp.initializeApp(Solicitacao.this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference =  firebaseDatabase.getReference();
+    }
+    public void limparcampos(){
+        editModelo.setText("");
+        editMarca.setText("");
+        editProduto.setText("");
+        editTelefone.setText("");
+        editQuant.setText("");
+        editNome.setText("");
+        editEmail.setText("");
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) { //Botão adicional na ToolBar
+        switch (item.getItemId()) {
+            case android.R.id.home:  //ID do seu botão
+                startActivity(new Intent(this, Inicio.class));
+                finishAffinity();  //Matar activity
+                break;
+            default:break;
+        }
+        return true;
+    }
+
 }
