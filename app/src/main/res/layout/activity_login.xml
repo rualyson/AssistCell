@@ -22,79 +22,82 @@
             android:padding="10dp"
             android:src="@drawable/cel"/>
     </android.support.design.widget.AppBarLayout>
-    <!-- Login progress -->
-    <ProgressBar
-        android:id="@+id/login_progress"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone" />
-
-    <ScrollView
-        android:id="@+id/login_form"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.online.assistencia.assistcell.LoginActivity">
 
-        <LinearLayout
-            android:id="@+id/email_login_form"
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginVertical="100dp">
+            android:layout_weight="1">
 
-            <android.support.design.widget.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
 
-                <AutoCompleteTextView
-
-                    android:id="@+id/login"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Login"
-                    android:inputType="textAutoComplete"
-                    android:maxLines="1"
-                    android:singleLine="true" />
-
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/senha"
+                    android:id="@+id/editTextEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="#000000" />
+
+                <EditText
+                    android:id="@+id/editTextPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
                     android:hint="Senha"
-                    android:imeActionId="6"
-                    android:imeActionLabel="@string/action_sign_in_short"
-                    android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:paddingBottom="15dp"
+                    android:textColorHint="#000000" />
 
-            </android.support.design.widget.TextInputLayout>
+                <Button
+                    android:id="@+id/buttonLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/rounded_button_transparent"
+                    android:text="Login"
+                    android:textAllCaps="false"
+                    android:textColor="#000000" />
 
-            <Button
-                android:id="@+id/btnEntrar"
-                android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/textViewSignup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="Sem acesso? Solicite aqui!"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/cardview_dark_background" />
+
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="Entrar"
-                android:textStyle="bold" />
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone" />
+        </RelativeLayout>
 
-            <Button
-                android:id="@+id/btnSolic"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="Solicitar acesso"
-                android:textStyle="bold" />
 
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 </LinearLayout>

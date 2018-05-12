@@ -63,7 +63,7 @@ public class Inicio extends AppCompatActivity implements NavigationView.OnNaviga
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    /*public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.inicio, menu);
         return true;
@@ -79,10 +79,8 @@ public class Inicio extends AppCompatActivity implements NavigationView.OnNaviga
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
