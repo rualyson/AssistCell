@@ -33,11 +33,6 @@
                 tools:layout_editor_absoluteX="38dp"
                 tools:layout_editor_absoluteY="81dp" />
 
-            <TextView
-                android:id="@+id/labelModelo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
             <EditText
                 android:id="@+id/editMarca"
                 android:layout_width="match_parent"
@@ -50,11 +45,6 @@
                 tools:layout_editor_absoluteX="38dp"
                 tools:layout_editor_absoluteY="81dp" />
 
-
-            <TextView
-                android:id="@+id/labelNome"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
             <EditText
                 android:id="@+id/editModelo"
@@ -90,11 +80,6 @@
                 tools:layout_editor_absoluteX="38dp"
                 tools:layout_editor_absoluteY="81dp" />
 
-            <TextView
-                android:id="@+id/labelTelefone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
             <EditText
                 android:id="@+id/editPhone"
                 android:layout_width="match_parent"
@@ -106,11 +91,6 @@
                 tools:layout_conversion_absoluteWidth="384dp"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="153dp" />
-
-            <TextView
-                android:id="@+id/labelEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
             <EditText
                 android:id="@+id/editE-mail"
@@ -127,7 +107,7 @@
             <TextView
                 android:id="@+id/labelData"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="32dp"
                 android:text="  Digite informando como gostaria de receber seu orçamento" />
 
             <EditText
@@ -145,7 +125,7 @@
             <Button
                 android:id="@+id/btnEnviar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
