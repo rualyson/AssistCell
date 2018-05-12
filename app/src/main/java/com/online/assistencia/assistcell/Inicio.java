@@ -86,7 +86,8 @@ public class Inicio extends AppCompatActivity implements NavigationView.OnNaviga
         int id = item.getItemId();
 
         if (id == R.id.nav_orcamento) {
-            // Handle the camera action
+            Intent intent = new Intent(this, FormularioOrcamento.class);
+            startActivity(intent);
         } else if (id == R.id.nav_inicio) {
             Intent intent = new Intent(this, DashADM.class);
             startActivity(intent);

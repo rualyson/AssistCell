@@ -31,6 +31,7 @@
         <activity android:name=".DashADM" />
         <activity android:name=".GrupoPeliculas" />
         <activity android:name=".GrupoCases" />
+        <activity android:name=".FormularioOrcamento" />
         <activity android:name=".GrupoFones" />
         <activity android:name=".FormReservaActivity" />
         <activity android:name=".GrupoTelas" />
@@ -38,6 +39,7 @@
         <activity android:name=".GrupoCarregadores" />
         <activity android:name=".RequestCadFunc" />
         <activity android:name=".Solicitacao" />
+        <activity android:name=".CadastroFuncionarios"></activity>
         <activity android:name=".SolicitLogin" />
         <activity android:name=".EscCadastro"></activity>
     </application>
