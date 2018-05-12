@@ -25,13 +25,12 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_dash_adm);
 
         adm_User = (CardView) findViewById(R.id.admUser);
-
         adm_User.setOnClickListener(this);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.inicio, menu);
+        getMenuInflater().inflate(R.menu.logout, menu);
         return true;
     }
 
@@ -40,7 +39,7 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.btn_logout) {
             mAuth.signOut();
             startActivity(new Intent(this, LoginActivity.class));
             finish();
@@ -49,6 +48,7 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
 
         return super.onOptionsItemSelected(item);
     }
+
 
     @Override
     public void onClick(View v) {
