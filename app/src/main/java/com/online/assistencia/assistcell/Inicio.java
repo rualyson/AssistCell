@@ -68,16 +68,13 @@ public class Inicio extends AppCompatActivity implements NavigationView.OnNaviga
         getMenuInflater().inflate(R.menu.inicio, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }*/
 
@@ -86,9 +83,10 @@ public class Inicio extends AppCompatActivity implements NavigationView.OnNaviga
         int id = item.getItemId();
 
         if (id == R.id.nav_orcamento) {
-
+            Intent intent = new Intent(this, FormularioOrcamento.class);
+            startActivity(intent);
         } else if (id == R.id.nav_inicio) {
-            Intent intent = new Intent(this, Inicio.class);
+            Intent intent = new Intent(this, DashADM.class);
             startActivity(intent);
         }else if (id == R.id.nav_login) {
             Intent intent = new Intent(this, LoginActivity.class);
