@@ -30,6 +30,7 @@
         <activity android:name=".DashADM" />
         <activity android:name=".GrupoPeliculas" />
         <activity android:name=".GrupoCases" />
+        <activity android:name=".FormularioOrcamento" />
         <activity android:name=".GrupoFones" />
         <activity android:name=".FormReservaActivity" />
         <activity android:name=".GrupoTelas" />
