@@ -56,9 +56,14 @@ public class NewFuncionario {
     public void setId(String id) {
         this.id = id;
     }
-    public String toString(){
-        return nome ;
 
+    @Override
+    public String toString() {
+        return "NewFuncionario{" +
+                "nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", telefone='" + telefone + '\'' +
+                '}';
     }
 
     public NewFuncionario(){
