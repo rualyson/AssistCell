@@ -59,11 +59,9 @@ public class NewFuncionario {
 
     @Override
     public String toString() {
-        return "NewFuncionario{" +
-                "nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", telefone='" + telefone + '\'' +
-                '}';
+        return "Nome: "+ nome +"\n"+
+                "Email: " + email + "\n" +
+                "Telefone: " + telefone + "\n";
     }
 
     public NewFuncionario(){
