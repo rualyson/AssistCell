@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -24,6 +25,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostra o botão
+        getSupportActionBar().setHomeButtonEnabled(true);      //Faz funcionar o botão
+        getSupportActionBar().setTitle("Login");//Titulo para ser exibido na Action Bar
+
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -104,5 +110,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 userLogin();
                 break;
         }
+    }
+    public boolean onOptionsItemSelected(MenuItem item) { //Botão adicional na ToolBar
+        switch (item.getItemId()) {
+            case android.R.id.home:  //ID do seu botão
+                startActivity(new Intent(this, Inicio.class));
+                finishAffinity();  //Matar activity
+                break;
+            default:break;
+        }
+        return true;
     }
 }

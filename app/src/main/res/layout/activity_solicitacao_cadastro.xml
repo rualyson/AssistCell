@@ -11,20 +11,13 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp"
         tools:ignore="MissingConstraints"
-        android:layout_marginTop="5dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SOLICITAÇÃO DE CADASTRO"
-            android:textSize="25dp"
-            android:textColor="@color/colorPrimary"
-            android:gravity="center" />
+        android:layout_marginTop="0dp">
     <!-- Entradas de Cadastro -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginTop="35dp">
+            android:layout_marginTop="1dp">
 
             <TextView
                 android:layout_width="match_parent"

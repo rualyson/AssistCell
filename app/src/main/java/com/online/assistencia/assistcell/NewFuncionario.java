@@ -57,6 +57,13 @@ public class NewFuncionario {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "Nome: "+ nome +"\n"+
+                "Email: " + email + "\n" +
+                "Telefone: " + telefone + "\n";
+    }
+
     public NewFuncionario(){
 
     }

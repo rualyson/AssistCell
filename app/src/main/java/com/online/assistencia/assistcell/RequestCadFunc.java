@@ -57,7 +57,7 @@ public class RequestCadFunc extends AppCompatActivity {
                     newFuncionario.setEndereco(editEndereco.getText().toString());
                     newFuncionario.setEmail(editEmailFunc.getText().toString());
                     newFuncionario.setTelefone(editContact.getText().toString());
-                    databaseReference.child("Requisicao_cadastro").child(newFuncionario.getId()).setValue(newFuncionario);
+                    databaseReference.child("Requisicoes").child(newFuncionario.getId()).setValue(newFuncionario);
 
 
                     Toast.makeText(getApplication(),
@@ -80,6 +80,16 @@ public class RequestCadFunc extends AppCompatActivity {
         FirebaseApp.initializeApp(RequestCadFunc.this);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference =  firebaseDatabase.getReference();
+    }
+    public boolean onOptionsItemSelected(MenuItem item) { //Botão adicional na ToolBar
+        switch (item.getItemId()) {
+            case android.R.id.home:  //ID do seu botão
+                startActivity(new Intent(this, LoginActivity.class));
+                finishAffinity();  //Matar activity
+                break;
+            default:break;
+        }
+        return true;
     }
 
 }
