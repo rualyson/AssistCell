@@ -1,7 +1,9 @@
 package com.online.assistencia.assistcell;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import com.google.firebase.FirebaseApp;
@@ -27,6 +29,11 @@ public class SolicitLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solicit_login);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostra o botão
+        getSupportActionBar().setHomeButtonEnabled(true);      //Faz funcionar o botão
+        getSupportActionBar().setTitle("Cadastro de Funcionários");//Titulo para ser exibido na Action Bar
+
 
         listV_dados = (ListView) findViewById(R.id.listV_dados);
 
@@ -62,6 +69,16 @@ public class SolicitLogin extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         //firebaseDatabase.setPersistenceEnabled(true);
         databaseReference =  firebaseDatabase.getReference();
+    }
+    public boolean onOptionsItemSelected(MenuItem item) { //Botão adicional na ToolBar
+        switch (item.getItemId()) {
+            case android.R.id.home:  //ID do seu botão
+                startActivity(new Intent(this, EscCadastro.class));
+                finishAffinity();  //Matar activity
+                break;
+            default:break;
+        }
+        return true;
     }
 
 }
