@@ -60,7 +60,7 @@ public class SolicitLogin extends AppCompatActivity {
     private void inicializarFirebase() {
         FirebaseApp.initializeApp(SolicitLogin.this);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        firebaseDatabase.setPersistenceEnabled(true);
+        //firebaseDatabase.setPersistenceEnabled(true);
         databaseReference =  firebaseDatabase.getReference();
     }
 
