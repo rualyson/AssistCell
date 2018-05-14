@@ -56,6 +56,10 @@ public class NewFuncionario {
     public void setId(String id) {
         this.id = id;
     }
+    public String toString(){
+        return nome ;
+
+    }
 
     public NewFuncionario(){
 

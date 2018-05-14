@@ -4,14 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,8 +20,8 @@ public class SolicitLogin extends AppCompatActivity {
 
     ListView listV_dados;
 
-    private List <RequestCadFunc> listFuncionario = new ArrayList <RequestCadFunc>();
-    private ArrayAdapter <RequestCadFunc> arrayAdapterFuncionario;
+    private List <NewFuncionario> listFuncionario = new ArrayList <NewFuncionario>();
+    private ArrayAdapter <NewFuncionario> arrayAdapterFuncionario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +29,7 @@ public class SolicitLogin extends AppCompatActivity {
         setContentView(R.layout.activity_solicit_login);
 
         listV_dados = (ListView) findViewById(R.id.listV_dados);
+
 
         inicializarFirebase();
         eventoDatabase();
@@ -43,10 +42,10 @@ public class SolicitLogin extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 listFuncionario.clear();
                 for (DataSnapshot objSnapshot: dataSnapshot.getChildren()){
-                    RequestCadFunc requestCadFunc = objSnapshot.getValue(RequestCadFunc.class);
-                    listFuncionario.add(requestCadFunc);
+                    NewFuncionario newFuncionario = objSnapshot.getValue(NewFuncionario.class);
+                    listFuncionario.add(newFuncionario);
                 }
-                arrayAdapterFuncionario = new ArrayAdapter<RequestCadFunc>(SolicitLogin.this,
+                arrayAdapterFuncionario = new ArrayAdapter<NewFuncionario>(SolicitLogin.this,
                         android.R.layout.simple_list_item_1, listFuncionario);
                 listV_dados.setAdapter(arrayAdapterFuncionario);
             }
@@ -64,4 +63,5 @@ public class SolicitLogin extends AppCompatActivity {
         firebaseDatabase.setPersistenceEnabled(true);
         databaseReference =  firebaseDatabase.getReference();
     }
+
 }
