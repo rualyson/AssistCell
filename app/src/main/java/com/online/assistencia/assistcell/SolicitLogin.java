@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
@@ -32,7 +33,7 @@ public class SolicitLogin extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostra o botão
         getSupportActionBar().setHomeButtonEnabled(true);      //Faz funcionar o botão
-        getSupportActionBar().setTitle("Cadastro de Funcionários");//Titulo para ser exibido na Action Bar
+        getSupportActionBar().setTitle("Solicitações de Cadastro");//Titulo para ser exibido na Action Bar
 
 
         listV_dados = (ListView) findViewById(R.id.listV_dados);
