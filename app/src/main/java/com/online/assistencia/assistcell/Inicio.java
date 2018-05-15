@@ -86,7 +86,7 @@ public class Inicio extends AppCompatActivity implements NavigationView.OnNaviga
             Intent intent = new Intent(this, FormularioOrcamento.class);
             startActivity(intent);
         } else if (id == R.id.nav_inicio) {
-            Intent intent = new Intent(this, DashADM.class);
+            Intent intent = new Intent(this, Inicio.class);
             startActivity(intent);
         }else if (id == R.id.nav_login) {
             Intent intent = new Intent(this, LoginActivity.class);
