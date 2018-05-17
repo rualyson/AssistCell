@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:text="Nome Completo" />
                 <EditText
-                    android:id="@+id/editNome"
+                    android:id="@+id/editNomeS"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:ems="5"
@@ -55,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:text="Marca" />
                 <EditText
-                    android:id="@+id/editMarca"
+                    android:id="@+id/editMarcaS"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:ems="5"
@@ -72,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:text="Modelo" />
                 <EditText
-                    android:id="@+id/editModelo"
+                    android:id="@+id/editModeloS"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:ems="5"
@@ -104,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:text="Estado fisico do aparelho" />
                 <EditText
-                    android:id="@+id/editEstadoFisico"
+                    android:id="@+id/editEstadoFisicoS"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:ems="5"
@@ -120,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:text="Relato de problemas" />
                 <EditText
-                    android:id="@+id/editProblema"
+                    android:id="@+id/editProblemaS"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:ems="5"
@@ -135,8 +135,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Contato" />
+
                 <EditText
-                    android:id="@+id/editPhone"
+                    android:id="@+id/editPhoneS"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:ems="5"
@@ -153,7 +154,7 @@
                     android:text="E-mail" />
 
                 <EditText
-                    android:id="@+id/editEmailCli"
+                    android:id="@+id/editEmailCliS"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:ems="5"
@@ -245,7 +246,7 @@
                     android:orientation="horizontal"
                     android:layout_marginTop="45dp">
                     <Button
-                        android:id="@+id/btnEnviar"
+                        android:id="@+id/btnEnviarS"
                         android:layout_width="110dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/rounded_button_transparent"
