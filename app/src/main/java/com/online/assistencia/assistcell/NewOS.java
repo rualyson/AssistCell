@@ -1,7 +1,7 @@
 package com.online.assistencia.assistcell;
 
 public class NewOS {
-    private String id, nomeCli, Marca, Modelo, Imei, EstadoF, Relato, Contato, Email, Horario, ac_chip, ac_cartaosd, ac_carregador, ac_outros, text_outros;
+    private String id, nomeCli, Marca, Modelo, Imei, EstadoF, Relato, Contato, Email, Horario, ac_chip, ac_cartaosd, ac_carregador, ac_outros, text_outros, ac_sem;
 
     public NewOS() {
     }
@@ -122,6 +122,14 @@ public class NewOS {
 
     public void setText_outros(String text_outros) {
         text_outros = text_outros;
+    }
+
+    public String getAc_sem() {
+        return ac_sem;
+    }
+
+    public void setAc_sem(String acSem) {
+        this.ac_carregador = "Sem acessórios";
     }
 
     public void NewOs(){
