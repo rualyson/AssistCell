@@ -53,6 +53,9 @@ public class CadServices extends AppCompatActivity implements View.OnClickListen
                         || Horario.getText().length() == 0 || Imei.getText().length() == 0 || EstadoF.getText().length() == 0 || Relato.getText().length() == 0 || Contato.getText().length() == 0 || Email.getText().length() == 0 ||ac_chip.isChecked() == false && ac_cardSD.isChecked() == false && ac_Carregador.isChecked() == false && ac_sem.isChecked() == false && ac_Outros.isChecked() == false) {
                     Toast.makeText(getApplication(), "Todos os campos devem ser preenchidos!",
                             Toast.LENGTH_LONG).show();
+                }if (ac_Outros.isChecked() == true && txtOutros.getText().length() == 0 ){
+                    Toast.makeText(getApplication(), "Caso seja outro tipo de acessório, especifique",
+                            Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(getApplication(), "Concluido com sucesso!",
                             Toast.LENGTH_LONG).show();
