@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -21,8 +22,14 @@ public class CadServices extends AppCompatActivity implements View.OnClickListen
     private RadioButton ac_chip;
     private RadioButton ac_cardSD;
     private RadioButton ac_Carregador;
+    private RadioButton ac_sem;
     private RadioButton ac_Outros;
     private Button enviar;
+
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +53,7 @@ public class CadServices extends AppCompatActivity implements View.OnClickListen
         ac_chip = (RadioButton) findViewById(R.id.rbn_chip);
         ac_cardSD = (RadioButton) findViewById(R.id.rbn_cartao);
         ac_Carregador = (RadioButton) findViewById(R.id.rbn_carregador);
+        ac_sem = (RadioButton) findViewById(R.id.rbn_sem);
         ac_Outros = (RadioButton) findViewById(R.id.rbn_outros);
 
         enviar = (Button) findViewById(R.id.btnEnviarS);
@@ -53,16 +61,41 @@ public class CadServices extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onClick(View v) {
                 if (nomeCli.getText().length() == 0 || (Marca.getText().length() == 0) || (Modelo.getText().length() == 0)
-                        || Horario.getText().length() == 0 || Imei.getText().length() == 0 || EstadoF.getText().length() == 0 || Relato.getText().length() == 0 || Contato.getText().length() == 0 || Email.getText().length() == 0) {
+                        || Horario.getText().length() == 0 || Imei.getText().length() == 0 || EstadoF.getText().length() == 0 || Relato.getText().length() == 0 || Contato.getText().length() == 0 || Email.getText().length() == 0 ||ac_chip.isChecked() == false && ac_cardSD.isChecked() == false && ac_Carregador.isChecked() == false && ac_sem.isChecked() == false && ac_Outros.isChecked() == false) {
                     Toast.makeText(getApplication(), "Todos os campos devem ser preenchidos!",
                             Toast.LENGTH_LONG).show();
-                } else {
+                }else {
+                    NewOS newOS = new NewOS();
+                    newOS.setId(UUID.randomUUID().toString());
+                    newOS.setNomeCli(nomeCli.getText().toString());
+                    newOS.setMarca(Marca.getText().toString());
+                    newOS.setModelo(Modelo.getText().toString());
+                    newOS.setImei(Imei.getText().toString());
+                    newOS.setEstadoF(EstadoF.getText().toString());
+                    newOS.setRelato(Relato.getText().toString());
+                    newOS.setContato(Contato.getText().toString());
+                    newOS.setEmail(Email.getText().toString());
+                    newOS.setHorario(Horario.getText().toString());
+                    newOS.setText_outros(txtOutros.toString());
+                    if (ac_chip.isChecked()){
+                        newOS.setAc_chip(ac_chip.toString());
+                    } else if (ac_cardSD.isChecked()){
+                        newOS.setAc_cartaosd(ac_cardSD.toString());
+                    } else if (ac_Carregador.isChecked()){
+                        newOS.setAc_carregador(ac_Carregador.toString());
+                    } else if (ac_sem.isChecked()){
+                        newOS.setAc_sem(ac_sem.toString());
+                    } else if (ac_Outros.isChecked()){
+                        newOS.setAc_outros(ac_Outros.toString());
+                    }
+                    databaseReference.child("OS").child(newOS.getId()).setValue(newOS);
                     Toast.makeText(getApplication(), "Concluido com sucesso!",
                             Toast.LENGTH_LONG).show();
                     limparCampos();
                 }
             }
         });
+        inicializarFirebase();
 
     }
 
@@ -77,6 +110,12 @@ public class CadServices extends AppCompatActivity implements View.OnClickListen
         Contato.setText("");
         Email.setText("");
         txtOutros.setText("");
+    }
+
+    private void inicializarFirebase() {
+        FirebaseApp.initializeApp(CadServices .this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference =  firebaseDatabase.getReference();
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
