@@ -41,6 +41,7 @@
         <activity android:name=".Solicitacao" />
         <activity android:name=".CadastroFuncionarios"></activity>
         <activity android:name=".SolicitLogin" />
+        <activity android:name=".AddNewProduto" />
         <activity android:name=".EscCadastro"></activity>
     </application>
 
