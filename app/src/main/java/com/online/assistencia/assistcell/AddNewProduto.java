@@ -8,10 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import java.util.UUID;
 
 public class AddNewProduto extends AppCompatActivity {
 
@@ -21,9 +17,6 @@ public class AddNewProduto extends AppCompatActivity {
     private EditText qtd; // quantidade do produto
 
     private Button btADD; // botão de confirmação
-
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,39 +41,14 @@ public class AddNewProduto extends AppCompatActivity {
                     if (desc.getText().length() == 0 && marca.getText().length() == 0 && qtd.getText().length() == 0){
                         Toast.makeText(getApplication(), "Os campos 'descrição', 'marca', 'quantidade' são obrigatórios!",
                                 Toast.LENGTH_SHORT).show();
-                    } else {
-                        NewProduto newProduto = new NewProduto ();
-                        newProduto.setId(UUID.randomUUID().toString());
-                        newProduto.setDescricao(desc.getText().toString());
-                        newProduto.setMarca(marca.getText().toString());
-                        newProduto.setModelo(modelo.getText().toString());
-                        newProduto.setQuantidade(Integer.parseInt(qtd.getText().toString()));
-                        databaseReference.child("Produtos-Cadastrados").child(newProduto.getId()).setValue(newProduto);
-
-                        Toast.makeText(getApplication(),
-                                "Produto cadastrado!", Toast.LENGTH_LONG).show();
-
-                        limparCampos();
                     }
                 } catch (Exception e){
                     Toast.makeText(getApplication(),"Os campos 'descrição', 'marca', 'quantidade' são obrigatórios!", Toast.LENGTH_LONG).show();
                 }
             }
-        }); inicializarFirebase();
+        });
     }
 
-    private void limparCampos() {
-        desc.setText("");
-        marca.setText("");
-        modelo.setText("");
-        qtd.setText("");
-    }
-
-    private void inicializarFirebase() {
-        FirebaseApp.initializeApp(AddNewProduto.this);
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference =  firebaseDatabase.getReference();
-    }
     public boolean onOptionsItemSelected(MenuItem item) { //Botão adicional na ToolBar
         switch (item.getItemId()) {
             case android.R.id.home:  //ID do seu botão
