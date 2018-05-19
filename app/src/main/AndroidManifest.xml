@@ -39,9 +39,14 @@
         <activity android:name=".GrupoCarregadores" />
         <activity android:name=".RequestCadFunc" />
         <activity android:name=".Solicitacao" />
-        <activity android:name=".CadastroFuncionarios"></activity>
+        <activity android:name=".CadastroFuncionarios" />
         <activity android:name=".SolicitLogin" />
-        <activity android:name=".EscCadastro"></activity>
+        <activity android:name=".EscCadastro" />
+        <activity
+            android:name=".TabServicos"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CadServices"></activity>
     </application>
 
 </manifest>

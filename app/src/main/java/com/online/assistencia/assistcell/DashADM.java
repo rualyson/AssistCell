@@ -17,6 +17,7 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
 
     FirebaseAuth mAuth;
     private CardView adm_User;
+    private CardView services;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,8 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
 
         adm_User = (CardView) findViewById(R.id.admUser);
         adm_User.setOnClickListener(this);
+        services = (CardView) findViewById(R.id.ordemService);
+        services.setOnClickListener(this);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -57,6 +60,12 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.admUser:
                 i = new Intent(this, EscCadastro.class);
+                startActivity(i);
+                break;
+        }
+        switch (v.getId()) {
+            case R.id.ordemService:
+                i = new Intent(this, TabServicos.class);
                 startActivity(i);
                 break;
         }

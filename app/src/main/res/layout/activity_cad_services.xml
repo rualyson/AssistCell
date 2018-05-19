@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FormReservaActivity"
+    android:id="@+id/linearLayout">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        tools:ignore="MissingConstraints">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/labelTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="59dp"
+                    android:text="Descrição de serviços técnicos a serem realizados"
+                    tools:layout_conversion_absoluteHeight="65dp"
+                    tools:layout_conversion_absoluteWidth="384dp"
+                    tools:layout_editor_absoluteX="0dp"
+                    android:gravity="center"
+                    tools:layout_editor_absoluteY="4dp" />
+                <TextView
+                    android:id="@+id/labelNome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nome Completo" />
+                <EditText
+                    android:id="@+id/editNomeS"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:ems="5"
+                    android:hint="Digite aqui"
+                    android:inputType="textPersonName"
+                    tools:layout_conversion_absoluteHeight="72dp"
+                    tools:layout_conversion_absoluteWidth="384dp"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="81dp" />
+                <TextView
+                    android:id="@+id/labelMarca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Marca" />
+                <EditText
+                    android:id="@+id/editMarcaS"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:ems="5"
+                    android:hint="Digite aqui"
+                    android:inputType="textPersonName"
+                    tools:layout_conversion_absoluteHeight="72dp"
+                    tools:layout_conversion_absoluteWidth="384dp"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="81dp" />
+
+                <TextView
+                    android:id="@+id/labelModelo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Modelo" />
+                <EditText
+                    android:id="@+id/editModeloS"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:ems="5"
+                    android:hint="Digite aqui"
+                    android:inputType="textPersonName"
+                    tools:layout_conversion_absoluteHeight="72dp"
+                    tools:layout_conversion_absoluteWidth="384dp"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="81dp" />
+                <TextView
+                    android:id="@+id/labelImei"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Imei/N° de série" />
+                <EditText
+                    android:id="@+id/editImei"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:ems="5"
+                    android:hint="Digite aqui"
+                    android:inputType="number"
+                    tools:layout_conversion_absoluteHeight="72dp"
+                    tools:layout_conversion_absoluteWidth="384dp"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="81dp" />
+                <TextView
+                    android:id="@+id/labelEstadof"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Estado fisico do aparelho" />
+                <EditText
+                    android:id="@+id/editEstadoFisicoS"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:ems="5"
+                    android:hint="ex: arranhado a traseira"
+                    android:inputType="textPersonName"
+                    tools:layout_conversion_absoluteHeight="72dp"
+                    tools:layout_conversion_absoluteWidth="384dp"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="81dp" />
+                <TextView
+                    android:id="@+id/labelRelato"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Relato de problemas" />
+                <EditText
+                    android:id="@+id/editProblemaS"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:ems="5"
+                    android:hint="ex: o display apagou"
+                    android:inputType="textPersonName"
+                    tools:layout_conversion_absoluteHeight="72dp"
+                    tools:layout_conversion_absoluteWidth="384dp"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="81dp" />
+                <TextView
+                    android:id="@+id/labelContato"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contato" />
+
+                <EditText
+                    android:id="@+id/editPhoneS"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:ems="5"
+                    android:hint="DDD + numero do telefone"
+                    android:inputType="phone"
+                    tools:layout_conversion_absoluteHeight="60dp"
+                    tools:layout_conversion_absoluteWidth="384dp"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="153dp" />
+                <TextView
+                    android:id="@+id/labelEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="E-mail" />
+
+                <EditText
+                    android:id="@+id/editEmailCliS"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:ems="5"
+                    android:hint="contato@cliente.com"
+                    android:inputType="textEmailAddress"
+                    tools:layout_conversion_absoluteHeight="72dp"
+                    tools:layout_conversion_absoluteWidth="368dp"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="235dp" />
+
+                <TextView
+                    android:id="@+id/labelHora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hora/Data" />
+                <EditText
+                    android:id="@+id/editHorario"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:ems="5"
+                    android:hint="17/05/2018 08:00"
+                    android:inputType="datetime"
+                    tools:layout_conversion_absoluteHeight="72dp"
+                    tools:layout_conversion_absoluteWidth="368dp"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="235dp" />
+
+                <TextView
+                    android:id="@+id/labelData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="O Cliente deixou Acessórios?" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+                    <RadioButton
+                        android:id="@+id/rbn_chip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Chip"/>
+                    <RadioButton
+                        android:id="@+id/rbn_cartao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Cartão SD"/>
+                    <RadioButton
+                        android:id="@+id/rbn_carregador"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="28dp"
+                        android:text="Carregador"/>
+                    <RadioButton
+                        android:id="@+id/rbn_sem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Sem acessórios"/>
+                    <RadioButton
+                        android:id="@+id/rbn_outros"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Outros"/>
+                    <EditText
+                        android:id="@+id/editOutrosText"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:ems="5"
+                        android:hint="Digite aqui"
+                        android:layout_marginLeft="20dp"
+                        android:inputType="text"
+                        tools:layout_conversion_absoluteHeight="72dp"
+                        tools:layout_conversion_absoluteWidth="368dp"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:layout_editor_absoluteY="235dp" />
+
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="45dp">
+                    <Button
+                        android:id="@+id/btnEnviarS"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_button_transparent"
+                        android:text="Enviar"/>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

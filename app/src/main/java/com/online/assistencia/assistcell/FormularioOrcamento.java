@@ -55,7 +55,29 @@ public class FormularioOrcamento extends AppCompatActivity implements View.OnCli
                         || EstadoF.getText().length() == 0 || Relato.getText().length() == 0 || Contato.getText().length() == 0 || Email.getText().length() == 0 ){
                     Toast.makeText(getApplication(), "Todos os campos devem ser preenchidos!",
                             Toast.LENGTH_LONG).show();
-                }if (rbn_receberViaSms.isChecked() == false && rbn_receberViaEmail.isChecked() == false && rbn_buscarNaAssist.isChecked() == false){
+                }if (nomeCli.getText().length() == 0){
+                    Toast.makeText(getApplication(), "O campo 'nome' deve ser preenchido!",
+                            Toast.LENGTH_LONG).show();
+                }if (Marca.getText().length() == 0){
+                    Toast.makeText(getApplication(), "O campo 'marca' deve ser preenchido!",
+                            Toast.LENGTH_LONG).show();
+                }if (Modelo.getText().length() == 0){
+                    Toast.makeText(getApplication(), "O campo 'modelo' deve ser preenchido!",
+                            Toast.LENGTH_LONG).show();
+                }if (EstadoF.getText().length() == 0){
+                    Toast.makeText(getApplication(), "O campo 'estado físico' deve ser preenchido!",
+                            Toast.LENGTH_LONG).show();
+                }if (Relato.getText().length() == 0){
+                    Toast.makeText(getApplication(), "O campo 'relato' deve ser preenchido!",
+                            Toast.LENGTH_LONG).show();
+                }if (Contato.getText().length() == 0){
+                    Toast.makeText(getApplication(), "O campo 'contato' deve ser preenchido!",
+                            Toast.LENGTH_LONG).show();
+                }if (Email.getText().length() == 0){
+                    Toast.makeText(getApplication(), "O campo 'email' deve ser preenchido!",
+                            Toast.LENGTH_LONG).show();
+                }
+                if (rbn_receberViaSms.isChecked() == false && rbn_receberViaEmail.isChecked() == false && rbn_buscarNaAssist.isChecked() == false){
                     Toast.makeText(getApplicationContext(), "Escolha como deseja receber o feedback do Orçamento",
                             Toast.LENGTH_SHORT).show();
                 } else {
