@@ -18,7 +18,7 @@ import java.util.UUID;
 
 public class CadServices extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText nomeCli, Marca, Modelo,Imei, EstadoF, Relato, Contato, Email, Horario, txtOutros;
+    private EditText nomeCli, Marca, Modelo,Imei, EstadoF, Relato, Contato, Email, Horario, txt_outros;
     private RadioButton ac_chip;
     private RadioButton ac_cardSD;
     private RadioButton ac_Carregador;
@@ -49,7 +49,7 @@ public class CadServices extends AppCompatActivity implements View.OnClickListen
         Contato = (EditText) findViewById(R.id.editPhoneS);
         Email = (EditText) findViewById(R.id.editEmailCliS);
         Horario = (EditText) findViewById(R.id.editHorario);
-        txtOutros = (EditText) findViewById(R.id.editOutrosText);
+        txt_outros = (EditText) findViewById(R.id.editext_outros);
         ac_chip = (RadioButton) findViewById(R.id.rbn_chip);
         ac_cardSD = (RadioButton) findViewById(R.id.rbn_cartao);
         ac_Carregador = (RadioButton) findViewById(R.id.rbn_carregador);
@@ -64,34 +64,39 @@ public class CadServices extends AppCompatActivity implements View.OnClickListen
                         || Horario.getText().length() == 0 || Imei.getText().length() == 0 || EstadoF.getText().length() == 0 || Relato.getText().length() == 0 || Contato.getText().length() == 0 || Email.getText().length() == 0 ||ac_chip.isChecked() == false && ac_cardSD.isChecked() == false && ac_Carregador.isChecked() == false && ac_sem.isChecked() == false && ac_Outros.isChecked() == false) {
                     Toast.makeText(getApplication(), "Todos os campos devem ser preenchidos!",
                             Toast.LENGTH_LONG).show();
-                }else {
-                    NewOS newOS = new NewOS();
-                    newOS.setId(UUID.randomUUID().toString());
-                    newOS.setNomeCli(nomeCli.getText().toString());
-                    newOS.setMarca(Marca.getText().toString());
-                    newOS.setModelo(Modelo.getText().toString());
-                    newOS.setImei(Imei.getText().toString());
-                    newOS.setEstadoF(EstadoF.getText().toString());
-                    newOS.setRelato(Relato.getText().toString());
-                    newOS.setContato(Contato.getText().toString());
-                    newOS.setEmail(Email.getText().toString());
-                    newOS.setHorario(Horario.getText().toString());
-                    newOS.setText_outros(txtOutros.toString());
-                    if (ac_chip.isChecked()){
-                        newOS.setAc_chip(ac_chip.toString());
-                    } else if (ac_cardSD.isChecked()){
-                        newOS.setAc_cartaosd(ac_cardSD.toString());
-                    } else if (ac_Carregador.isChecked()){
-                        newOS.setAc_carregador(ac_Carregador.toString());
-                    } else if (ac_sem.isChecked()){
-                        newOS.setAc_sem(ac_sem.toString());
-                    } else if (ac_Outros.isChecked()){
-                        newOS.setAc_outros(ac_Outros.toString());
+                } else {
+                    if (ac_Outros.isChecked() == true && txt_outros.getText().length() == 0 ){
+                        Toast.makeText(getApplication(), "Caso seja outro tipo de acessório, especifique",
+                                Toast.LENGTH_LONG).show();
+                    }else {
+                        NewOS newOS = new NewOS();
+                        newOS.setId(UUID.randomUUID().toString());
+                        newOS.setNomeCli(nomeCli.getText().toString());
+                        newOS.setMarca(Marca.getText().toString());
+                        newOS.setModelo(Modelo.getText().toString());
+                        newOS.setImei(Imei.getText().toString());
+                        newOS.setEstadoF(EstadoF.getText().toString());
+                        newOS.setRelato(Relato.getText().toString());
+                        newOS.setContato(Contato.getText().toString());
+                        newOS.setEmail(Email.getText().toString());
+                        newOS.setHorario(Horario.getText().toString());
+                        newOS.setText_outros(txt_outros.getText().toString());
+                        if (ac_chip.isChecked()) {
+                            newOS.setAc_chip(ac_chip.toString());
+                        } else if (ac_cardSD.isChecked()) {
+                            newOS.setAc_cartaosd(ac_cardSD.toString());
+                        } else if (ac_Carregador.isChecked()) {
+                            newOS.setAc_carregador(ac_Carregador.toString());
+                        } else if (ac_sem.isChecked()) {
+                            newOS.setAc_sem(ac_sem.toString());
+                        } else if (ac_Outros.isChecked()) {
+                            newOS.setAc_outros(ac_Outros.toString());
+                        }
+                        databaseReference.child("OS").child(newOS.getId()).setValue(newOS);
+                        Toast.makeText(getApplication(), "Concluido com sucesso!",
+                                Toast.LENGTH_LONG).show();
+                        limparCampos();
                     }
-                    databaseReference.child("OS").child(newOS.getId()).setValue(newOS);
-                    Toast.makeText(getApplication(), "Concluido com sucesso!",
-                            Toast.LENGTH_LONG).show();
-                    limparCampos();
                 }
             }
         });
@@ -109,7 +114,7 @@ public class CadServices extends AppCompatActivity implements View.OnClickListen
         Horario.setText("");
         Contato.setText("");
         Email.setText("");
-        txtOutros.setText("");
+        txt_outros.setText("");
     }
 
     private void inicializarFirebase() {

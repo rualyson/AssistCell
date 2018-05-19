@@ -18,6 +18,9 @@ public class NewOS {
     private String text_outros;
     private String ac_sem;
 
+
+
+
     public NewOS() {
     }
 
@@ -98,6 +101,7 @@ public class NewOS {
     }
 
     public void setHorario(String horario) {
+
         Horario = horario;
     }
 
@@ -138,9 +142,8 @@ public class NewOS {
     }
 
     public void setText_outros(String text_outros) {
-        text_outros = text_outros;
+        this.text_outros = text_outros;
     }
-
     public String getAc_sem() {
         return ac_sem;
     }
