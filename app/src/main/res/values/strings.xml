@@ -28,5 +28,7 @@
     <string name="email">Email</string>
     <string name="nome_completo">Nome Completo</string>
     <string name="telefone">Telefone</string>
-    <string name="title_activity_cadastro_produto_novo">cadastroProdutoNovo</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="emailcontact">E-mail para Contato: <a href="mailto:clinicell@assistcell.com" target="_top">clinicell@assistcell.com</a></string>
+    <string name="title_activity_tab_prod_em_falta">MainActivity</string>
 </resources>
