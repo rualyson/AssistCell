@@ -53,5 +53,4 @@
             android:label="@string/title_activity_tab_prod_em_falta"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
-
 </manifest>
