@@ -48,6 +48,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CadServices"></activity>
         <activity android:name=".AddNewProduto" />
+        <activity android:name=".CadServices" />
+        <activity android:name=".CadProdEmFalta" />
+        <activity
+            android:name=".TabProdEmFalta"
+            android:label="@string/title_activity_tab_prod_em_falta"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

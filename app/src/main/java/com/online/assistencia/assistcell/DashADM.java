@@ -19,6 +19,8 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
     private CardView adm_User;
     private CardView services;
     private CardView addNewProduto;
+    private CardView prodEmFalta;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,9 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
         adm_User.setOnClickListener(this);
         services = (CardView) findViewById(R.id.ordemService);
         services.setOnClickListener(this);
+        prodEmFalta = (CardView) findViewById(R.id.prodFalta);
+        prodEmFalta.setOnClickListener(this);
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -71,6 +76,13 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.ordemService:
                 i = new Intent(this, TabServicos.class);
+                startActivity(i);
+                break;
+        }
+
+        switch (v.getId()) {
+            case R.id.prodFalta:
+                i = new Intent(this, TabProdEmFalta.class);
                 startActivity(i);
                 break;
         }

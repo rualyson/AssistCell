@@ -192,13 +192,13 @@
                 <RadioGroup
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:gravity="center">
+                    android:orientation="vertical"
+                    >
                     <RadioButton
                         android:id="@+id/rbn_chip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
+                        android:layout_marginLeft="20dp"
                         android:text="Chip"/>
                     <RadioButton
                         android:id="@+id/rbn_cartao"
@@ -213,32 +213,34 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="28dp"
                         android:text="Carregador"/>
-
-
-                </RadioGroup>
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-                <RadioButton
-                    android:id="@+id/rbn_outros"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:text="Outros"/>
+                    <RadioButton
+                        android:id="@+id/rbn_sem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Sem acessórios"/>
+                    <RadioButton
+                        android:id="@+id/rbn_outros"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Outros"/>
                     <EditText
                         android:id="@+id/editOutrosText"
                         android:layout_width="match_parent"
                         android:layout_height="46dp"
                         android:ems="5"
                         android:hint="Digite aqui"
+                        android:layout_marginLeft="20dp"
                         android:inputType="text"
                         tools:layout_conversion_absoluteHeight="72dp"
                         tools:layout_conversion_absoluteWidth="368dp"
                         tools:layout_editor_absoluteX="0dp"
                         tools:layout_editor_absoluteY="235dp" />
+
+
                 </RadioGroup>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
