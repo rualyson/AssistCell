@@ -39,9 +39,24 @@
         <activity android:name=".GrupoCarregadores" />
         <activity android:name=".RequestCadFunc" />
         <activity android:name=".Solicitacao" />
-        <activity android:name=".CadastroFuncionarios"></activity>
+        <activity android:name=".CadastroFuncionarios" />
         <activity android:name=".SolicitLogin" />
-        <activity android:name=".EscCadastro"></activity>
+        <activity android:name=".EscCadastro" />
+        <activity
+            android:name=".cadastroProdutoNovo"
+            android:label="@string/title_activity_cadastro_produto_novo"
+            android:parentActivityName=".DashADM"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.online.assistencia.assistcell.DashADM" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
