@@ -1,15 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".TabInformacoes">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/HorAtendimento"
+        android:layout_width="258dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:text="Horário de Atendimento: \n\nSegunda à Sexta 08:00 às 18:00\nSábado                  07:30 às 12:00 "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="10dp"></View>
+    <TextView
+        android:id="@+id/enderecoEmpresa"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:text="Endereço: \n\nRua Amália Coelho n°44 Centro | Loja B"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="10dp"></View>
+    <TextView
+        android:id="@+id/email_empresa"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:autoLink="email"
+        android:text="@string/emailcontact"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="10dp"></View>
+
+    <TextView
+        android:id="@+id/contact_empresa"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:autoLink="phone"
+        android:text="Telefone:\n\n(83)98821-6869"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="10dp"></View>
+
+</LinearLayout>
