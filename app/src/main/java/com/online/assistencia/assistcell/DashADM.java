@@ -65,7 +65,7 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
                 startActivity(i);
                 break;
             case R.id.addProduto:
-                i = new Intent(this, cadastroProdutoNovo.class);
+                i = new Intent(this, CadProdNovo.class);
                 startActivity(i);
                 break;
         }

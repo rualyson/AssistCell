@@ -43,7 +43,7 @@
         <activity android:name=".SolicitLogin" />
         <activity android:name=".EscCadastro" />
         <activity
-            android:name=".cadastroProdutoNovo"
+            android:name=".CadProdNovo"
             android:label="@string/title_activity_cadastro_produto_novo"
             android:parentActivityName=".DashADM"
             android:theme="@style/AppTheme.NoActionBar">
