@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Solicitacao">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="352dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="15dp"
+                android:text="Para concluir o cadastro, por favor, digite as seguintes informações:\n\nOBS: No caso de produtos diversos como chips de operadora, preencher da seguinte forma:\n • Marca: Tim\n • Modelo: Chip"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="Categoria:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <RadioGroup
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButtonTelas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Telas" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonPeliculas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Películas" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonFones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Fones de Ouvido" />
+            </RadioGroup>
+            <RadioGroup
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButtonCapinhas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Capinhas" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonCarregadores"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Carregador" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonDiversos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Diversos" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="Marca:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editMarca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:ems="10"
+                android:hint="Ex: Samsung, LG, Xiaomi"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="Modelo:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editModelo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:ems="10"
+                android:hint="Ex: Galaxy S7, Iphone 6"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="Descrição:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editDescricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:ems="10"
+                android:hint="Ex: Película de vidro, película de plástico"
+                android:inputType="textPersonName" />
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="Quantidade:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editQuant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:ems="10"
+                android:hint="Quantidade do produto em estoque"
+                android:inputType="numberDecimal" />
+
+            <Button
+                android:id="@+id/botCadastrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rounded_button_transparent"
+                android:text="Cadastrar"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
