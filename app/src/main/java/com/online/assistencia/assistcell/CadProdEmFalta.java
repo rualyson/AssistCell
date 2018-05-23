@@ -10,11 +10,20 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
+
 public class CadProdEmFalta extends AppCompatActivity {
 
     private RadioButton rdTelas,rdPeliculas,rdFones,rdCapinhas,rdCarregador,rdDiversos;
     private EditText editMarca,editModelo,editQuant,editDescricao;
     private Button botCadastrar;
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +47,6 @@ public class CadProdEmFalta extends AppCompatActivity {
         rdDiversos = (RadioButton) findViewById(R.id.radioButtonDiversos);
 
         botCadastrar = (Button) findViewById(R.id.botCadastrar);
-
-
         botCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +61,26 @@ public class CadProdEmFalta extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "ERRO! Selecione uma categoria!",
                                 Toast.LENGTH_SHORT).show();
                     } else {
+                        NewProdutoF newProdutoF = new NewProdutoF();
+                        newProdutoF.setId(UUID.randomUUID().toString());
+                        newProdutoF.setMarcaProdF(editMarca.getText().toString());
+                        newProdutoF.setModeloProdF(editModelo.getText().toString());
+                        newProdutoF.setQuantProdF(editQuant.getText().toString());
+                        newProdutoF.setDesProdF(editDescricao.getText().toString());
+                        if (rdTelas.isChecked()) {
+                            newProdutoF.setRb_telas(rdTelas.toString());
+                        } else if (rdPeliculas.isChecked()) {
+                            newProdutoF.setRb_peliculas(rdPeliculas.toString());
+                        } else if (rdFones.isChecked()) {
+                            newProdutoF.setRb_carregador(rdFones.toString());
+                        } else if (rdCapinhas.isChecked()) {
+                            newProdutoF.setRb_cases(rdCapinhas.toString());
+                        } else if (rdCarregador.isChecked()) {
+                            newProdutoF.setRb_carregador(rdCarregador.toString());
+                        }else if (rdDiversos.isChecked()) {
+                            newProdutoF.setRb_diversos(rdDiversos.toString());
+                        }
+                        databaseReference.child("ProdutosF").child(newProdutoF.getId()).setValue(newProdutoF);
                         Toast.makeText(getApplication(),
                                 "Produto cadastrado com Sucesso!", Toast.LENGTH_LONG).show();
                         limparCampos();
@@ -62,7 +89,15 @@ public class CadProdEmFalta extends AppCompatActivity {
                 }
             }
         });
+        inicializarFirebase();
     }
+
+    private void inicializarFirebase() {
+        FirebaseApp.initializeApp(CadProdEmFalta .this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference =  firebaseDatabase.getReference();
+    }
+
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:

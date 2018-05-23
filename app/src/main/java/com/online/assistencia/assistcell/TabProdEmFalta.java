@@ -7,8 +7,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TabProdEmFalta extends AppCompatActivity {
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+
+    ListView listV_prodF;
+
+    private List<NewProdutoF> listProdF = new ArrayList<NewProdutoF>();
+    private ArrayAdapter<NewProdutoF> arrayAdapterProdutoF;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
