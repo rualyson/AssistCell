@@ -33,10 +33,10 @@ public class AddNewProduto extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);      //Faz funcionar o botão
         getSupportActionBar().setTitle("Cadastro de Produtos");//Titulo para ser exibido na Action Bar
 
-        marca = (EditText) findViewById(R.id.editMarca);
-        modelo = (EditText) findViewById(R.id.editCadastraModelo);
-        qtd = (EditText) findViewById(R.id.editCadastraQuantidade);
-        valor = (EditText) findViewById(R.id.editValor);
+        marca = (EditText) findViewById(R.id.editCadMarca);
+        modelo = (EditText) findViewById(R.id.editCadModelo);
+        qtd = (EditText) findViewById(R.id.editCadQuant);
+        valor = (EditText) findViewById(R.id.editCadValor);
         tela = (RadioButton) findViewById(R.id.rbTelas);
         cases = (RadioButton) findViewById(R.id.rbCapinhas);
         fones = (RadioButton) findViewById(R.id.rbFones);
@@ -49,9 +49,9 @@ public class AddNewProduto extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if (valor.getText().length() == 0 && modelo.getText().length() == 0 && marca.getText().length() == 0 &&
+                    if (valor.getText().length() == 0 || modelo.getText().length() == 0 || marca.getText().length() == 0 ||
                             qtd.getText().length() == 0) {
-                        Toast.makeText(getApplication(), "Os campos 'descrição', 'marca', 'quantidade', 'valor' são obrigatórios!",
+                        Toast.makeText(getApplication(), "Todos os campos são obrigatórios!",
                                 Toast.LENGTH_SHORT).show();
                     } else if (!tela.isChecked() && !cases.isChecked() && !fones.isChecked() && !carregadores.isChecked() &&
                             !diversos.isChecked() && !peliculas.isChecked()) {
@@ -60,15 +60,16 @@ public class AddNewProduto extends AppCompatActivity {
                     } else {
                         Toast.makeText(getApplication(), "Cadastrado com sucesso!",
                                 Toast.LENGTH_SHORT).show();
+
+                        limparCampos();
                     }
                 } catch (Exception e){
-                    Toast.makeText(getApplication(), "Todos os campos são obrigatórios!",
+                    Toast.makeText(getApplication(), "Todos os campos são obrigatórios!*",
                             Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
-
     public boolean onOptionsItemSelected(MenuItem item) { //Botão adicional na ToolBar
         switch (item.getItemId()) {
             case android.R.id.home:  //ID do seu botão
@@ -78,5 +79,11 @@ public class AddNewProduto extends AppCompatActivity {
             default:break;
         }
         return true;
+    }
+    private void limparCampos() {
+        valor.setText("");
+        marca.setText("");
+        modelo.setText("");
+        qtd.setText("");
     }
 }
