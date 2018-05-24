@@ -7,43 +7,63 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class AddNewProduto extends AppCompatActivity {
 
-    private EditText desc; // descrição do produto
     private EditText marca; // marca do produto
     private EditText modelo; // modelo do produto
     private EditText qtd; // quantidade do produto
+    private EditText valor;
+    private RadioButton tela;
+    private RadioButton cases;
+    private RadioButton fones;
+    private RadioButton carregadores;
+    private RadioButton diversos;
+    private RadioButton peliculas;
 
     private Button btADD; // botão de confirmação
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro_produto_novo);
+        setContentView(R.layout.activity_cad_prod_novo);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostra o botão
         getSupportActionBar().setHomeButtonEnabled(true);      //Faz funcionar o botão
         getSupportActionBar().setTitle("Cadastro de Produtos");//Titulo para ser exibido na Action Bar
 
-        desc = (EditText) findViewById(R.id.editDescricao);
         marca = (EditText) findViewById(R.id.editMarca);
         modelo = (EditText) findViewById(R.id.editCadastraModelo);
         qtd = (EditText) findViewById(R.id.editCadastraQuantidade);
-        btADD = (Button) findViewById(R.id.btnSalvar);
+        valor = (EditText) findViewById(R.id.editValor);
+        tela = (RadioButton) findViewById(R.id.rbTelas);
+        cases = (RadioButton) findViewById(R.id.rbCapinhas);
+        fones = (RadioButton) findViewById(R.id.rbFones);
+        carregadores = (RadioButton) findViewById(R.id.rbCarregadores);
+        diversos = (RadioButton) findViewById(R.id.rbDiversos);
+        peliculas = (RadioButton) findViewById(R.id.rbPeliculas);
 
+        btADD = (Button) findViewById(R.id.botCadastrar);
         btADD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try{
-
-
-                    if (desc.getText().length() == 0 && marca.getText().length() == 0 && qtd.getText().length() == 0){
-                        Toast.makeText(getApplication(), "Os campos 'descrição', 'marca', 'quantidade' são obrigatórios!",
+                try {
+                    if (valor.getText().length() == 0 && modelo.getText().length() == 0 && marca.getText().length() == 0 &&
+                            qtd.getText().length() == 0) {
+                        Toast.makeText(getApplication(), "Os campos 'descrição', 'marca', 'quantidade', 'valor' são obrigatórios!",
+                                Toast.LENGTH_SHORT).show();
+                    } else if (!tela.isChecked() && !cases.isChecked() && !fones.isChecked() && !carregadores.isChecked() &&
+                            !diversos.isChecked() && !peliculas.isChecked()) {
+                        Toast.makeText(getApplicationContext(), "Por favor, selecionar uma categoria!",
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplication(), "Cadastrado com sucesso!",
                                 Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e){
-                    Toast.makeText(getApplication(),"Os campos 'descrição', 'marca', 'quantidade' são obrigatórios!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(), "Todos os campos são obrigatórios!",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
         });
