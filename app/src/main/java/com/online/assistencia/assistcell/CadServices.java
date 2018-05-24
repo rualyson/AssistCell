@@ -10,11 +10,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.UUID;
-
 public class CadServices extends AppCompatActivity implements View.OnClickListener {
 
     private EditText nomeCli, Marca, Modelo,Imei, EstadoF, Relato, Contato, Email, Horario, txtOutros;
@@ -22,6 +17,7 @@ public class CadServices extends AppCompatActivity implements View.OnClickListen
     private RadioButton ac_cardSD;
     private RadioButton ac_Carregador;
     private RadioButton ac_Outros;
+    private RadioButton ac_sem;
     private Button enviar;
 
     @Override
@@ -46,6 +42,7 @@ public class CadServices extends AppCompatActivity implements View.OnClickListen
         ac_chip = (RadioButton) findViewById(R.id.rbn_chip);
         ac_cardSD = (RadioButton) findViewById(R.id.rbn_cartao);
         ac_Carregador = (RadioButton) findViewById(R.id.rbn_carregador);
+        ac_sem = (RadioButton) findViewById(R.id.rbn_sem);
         ac_Outros = (RadioButton) findViewById(R.id.rbn_outros);
 
         enviar = (Button) findViewById(R.id.btnEnviarS);
@@ -53,13 +50,18 @@ public class CadServices extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onClick(View v) {
                 if (nomeCli.getText().length() == 0 || (Marca.getText().length() == 0) || (Modelo.getText().length() == 0)
-                        || Horario.getText().length() == 0 || Imei.getText().length() == 0 || EstadoF.getText().length() == 0 || Relato.getText().length() == 0 || Contato.getText().length() == 0 || Email.getText().length() == 0) {
+                        || Horario.getText().length() == 0 || Imei.getText().length() == 0 || EstadoF.getText().length() == 0 || Relato.getText().length() == 0 || Contato.getText().length() == 0 || Email.getText().length() == 0 ||ac_chip.isChecked() == false && ac_cardSD.isChecked() == false && ac_Carregador.isChecked() == false && ac_sem.isChecked() == false && ac_Outros.isChecked() == false) {
                     Toast.makeText(getApplication(), "Todos os campos devem ser preenchidos!",
                             Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getApplication(), "Concluido com sucesso!",
-                            Toast.LENGTH_LONG).show();
-                    limparCampos();
+                    if (ac_Outros.isChecked() == true && txtOutros.getText().length() == 0 ){
+                        Toast.makeText(getApplication(), "Caso seja outro tipo de acessório, especifique",
+                                Toast.LENGTH_LONG).show();
+                    }else {
+                        Toast.makeText(getApplication(), "Concluido com sucesso!",
+                                Toast.LENGTH_LONG).show();
+                        limparCampos();
+                    }
                 }
             }
         });
