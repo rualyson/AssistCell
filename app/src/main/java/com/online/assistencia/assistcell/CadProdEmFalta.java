@@ -52,13 +52,13 @@ public class CadProdEmFalta extends AppCompatActivity {
             public void onClick(View v) {
                 if ((editMarca.getText().length() == 0) || (editModelo.getText().length() == 0)
                         || editQuant.getText().length() == 0 || editDescricao.getText().length() == 0){
-                    Toast.makeText(getApplication(), "ERRO! Preencha corretamente todos os campos.",
+                    Toast.makeText(getApplication(), "Preencha corretamente todos os campos.",
                             Toast.LENGTH_LONG).show();
                 }else{
                     if (rdTelas.isChecked() == false && rdPeliculas.isChecked() == false
                             && rdFones.isChecked() == false && rdCapinhas.isChecked() == false
                             && rdCarregador.isChecked() == false && rdDiversos.isChecked() == false) {
-                        Toast.makeText(getApplicationContext(), "ERRO! Selecione uma categoria!",
+                        Toast.makeText(getApplicationContext(), "Selecione uma categoria!",
                                 Toast.LENGTH_SHORT).show();
                     } else {
                         NewProdutoF newProdutoF = new NewProdutoF();
