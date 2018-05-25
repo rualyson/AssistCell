@@ -40,7 +40,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/radioButtonTelas"
@@ -62,13 +62,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Fones de Ouvido" />
-            </RadioGroup>
-            <RadioGroup
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
                 <RadioButton
                     android:id="@+id/radioButtonCapinhas"
                     android:layout_width="wrap_content"
