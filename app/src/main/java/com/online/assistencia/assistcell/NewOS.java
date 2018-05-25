@@ -150,19 +150,53 @@ public class NewOS {
         this.ac_sem = "Sem acessorios";
     }
 
-
-    public void NewOs(){
-
-    }
-
     @Override
     public String toString() {
-        return  "Nome do cliente = " + nomeCli + '\n' +
-                "Marca do celular = " + Marca + '\n' +
-                "Modelo do celular = " + Modelo + '\n' +
-                "Estado físico = " + EstadoF + '\n' +
-                "Relato = " + Relato + '\n' +
-                "Contato = " + Contato + '\n' +
-                "Horario = " + Horario + '\n';
+        if(ac_chip!=null){
+            return  "Nome do cliente = " + nomeCli + '\n' +
+                    "Marca do celular = " + Marca + '\n' +
+                    "Modelo do celular = " + Modelo + '\n' +
+                    "Estado físico = " + EstadoF + '\n' +
+                    "Relato = " + Relato + '\n' +
+                    "Contato = " + Contato + '\n' +
+                    "Horario = " + Horario + '\n' +
+                    "Contém = " + ac_chip;
+        }else if(ac_cartaosd!=null){
+            return  "Nome do cliente = " + nomeCli + '\n' +
+                    "Marca do celular = " + Marca + '\n' +
+                    "Modelo do celular = " + Modelo + '\n' +
+                    "Estado físico = " + EstadoF + '\n' +
+                    "Relato = " + Relato + '\n' +
+                    "Contato = " + Contato + '\n' +
+                    "Horario = " + Horario + '\n' +
+                    "Contém = " + ac_cartaosd;
+        }else if(ac_carregador!=null){
+            return  "Nome do cliente = " + nomeCli + '\n' +
+                    "Marca do celular = " + Marca + '\n' +
+                    "Modelo do celular = " + Modelo + '\n' +
+                    "Estado físico = " + EstadoF + '\n' +
+                    "Relato = " + Relato + '\n' +
+                    "Contato = " + Contato + '\n' +
+                    "Horario = " + Horario + '\n' +
+                    "Contém = "+ac_carregador;
+        }else if(ac_sem!=null){
+            return  "Nome do cliente = " + nomeCli + '\n' +
+                    "Marca do celular = " + Marca + '\n' +
+                    "Modelo do celular = " + Modelo + '\n' +
+                    "Estado físico = " + EstadoF + '\n' +
+                    "Relato = " + Relato + '\n' +
+                    "Contato = " + Contato + '\n' +
+                    "Horario = " + Horario + '\n'+
+                    ac_sem;
+        }else{
+            return  "Nome do cliente = " + nomeCli + '\n' +
+                    "Marca do celular = " + Marca + '\n' +
+                    "Modelo do celular = " + Modelo + '\n' +
+                    "Estado físico = " + EstadoF + '\n' +
+                    "Relato = " + Relato + '\n' +
+                    "Contato = " + Contato + '\n' +
+                    "Horario = " + Horario + '\n'+
+                    "Contém = "+text_outros;
+        }
     }
 }
