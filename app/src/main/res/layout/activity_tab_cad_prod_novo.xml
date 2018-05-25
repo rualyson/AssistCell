@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TabProdEmFalta">
+    tools:context=".TabProdCadN">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -31,8 +31,8 @@
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <ListView
+        android:id="@+id/listV_CadProdNovo"
         android:layout_marginTop="60dp"
-        android:id="@+id/listV_ProdF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

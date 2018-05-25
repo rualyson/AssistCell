@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -18,28 +17,26 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TabProdEmFalta extends AppCompatActivity {
+public class TabProdCadN extends AppCompatActivity{
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
-    ListView listV_prodF;
+    ListView listV_prodCadF;
 
-    private List<NewProdutoF> listProdF = new ArrayList<NewProdutoF>();
-    private ArrayAdapter<NewProdutoF> arrayAdapterProdutoF;
+    private List<NewProduto> listProdCadN = new ArrayList<NewProduto>();
+    private ArrayAdapter<NewProduto> arrayAdapterProdutoCadN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tab_prod_em_falta);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_tab_cad_prod_novo);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle("Lista de Produtos em Falta");
+        getSupportActionBar().setTitle("Lista de Produtos Cadastrados");
 
-        listV_prodF = (ListView) findViewById(R.id.listV_ProdF);
+        listV_prodCadF = (ListView) findViewById(R.id.listV_CadProdNovo);
 
         inicializarFirebase();
         eventoDatabase();
@@ -48,24 +45,24 @@ public class TabProdEmFalta extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TabProdEmFalta.this, CadProdEmFalta.class);
+                Intent intent = new Intent(TabProdCadN.this, AddNewProduto.class);
                 startActivity(intent);
             }
         });
     }
 
     private void eventoDatabase(){
-        databaseReference.child("ProdutosF").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Produtos-Cadastrados").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                listProdF.clear();
+                listProdCadN.clear();
                 for (DataSnapshot objSnapshot: dataSnapshot.getChildren()){
-                    NewProdutoF newProdutoF = objSnapshot.getValue(NewProdutoF.class);
-                    listProdF.add(newProdutoF);
+                    NewProduto newProduto = objSnapshot.getValue(NewProduto.class);
+                    listProdCadN.add(newProduto);
                 }
-                arrayAdapterProdutoF = new ArrayAdapter<NewProdutoF>(TabProdEmFalta.this,
-                        android.R.layout.simple_list_item_1, listProdF);
-                listV_prodF.setAdapter(arrayAdapterProdutoF);
+                arrayAdapterProdutoCadN = new ArrayAdapter<NewProduto>(TabProdCadN.this,
+                        android.R.layout.simple_list_item_1, listProdCadN);
+                listV_prodCadF.setAdapter(arrayAdapterProdutoCadN);
             }
 
             @Override
@@ -75,7 +72,7 @@ public class TabProdEmFalta extends AppCompatActivity {
         });
     }
     private void inicializarFirebase() {
-        FirebaseApp.initializeApp(TabProdEmFalta.this);
+        FirebaseApp.initializeApp(TabProdCadN.this);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference =  firebaseDatabase.getReference();
     }

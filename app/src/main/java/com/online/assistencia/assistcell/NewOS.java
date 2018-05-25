@@ -154,4 +154,15 @@ public class NewOS {
     public void NewOs(){
 
     }
+
+    @Override
+    public String toString() {
+        return  "Nome do cliente = " + nomeCli + '\n' +
+                "Marca do celular = " + Marca + '\n' +
+                "Modelo do celular = " + Modelo + '\n' +
+                "Estado físico = " + EstadoF + '\n' +
+                "Relato = " + Relato + '\n' +
+                "Contato = " + Contato + '\n' +
+                "Horario = " + Horario + '\n';
+    }
 }
