@@ -102,4 +102,13 @@ public class NewProduto {
     public void setRb_carregador(String rb_carregador) {
         this.rb_carregador = "Carregador";
     }
+
+    @Override
+    public String toString() {
+        return "Marca = " + marca + '\n' +
+                "Modelo = " + modelo + '\n' +
+                "Descricao = " + descricao + '\n' +
+                "quantidade = " + quantidade + '\n'+
+                "Valor = " + valor;
+    }
 }
