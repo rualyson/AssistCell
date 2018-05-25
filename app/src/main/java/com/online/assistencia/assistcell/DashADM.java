@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -16,7 +19,6 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
     private CardView adm_User;
     private CardView services;
     private CardView prodEmFalta;
-    private CardView addProduto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +32,6 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
         services.setOnClickListener(this);
         prodEmFalta = (CardView) findViewById(R.id.prodFalta);
         prodEmFalta.setOnClickListener(this);
-        addProduto = (CardView) findViewById(R.id.addProduto);
-        addProduto.setOnClickListener(this);
 
     }
 
@@ -66,16 +66,17 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
                 i = new Intent(this, EscCadastro.class);
                 startActivity(i);
                 break;
+        }
+        switch (v.getId()) {
             case R.id.ordemService:
                 i = new Intent(this, TabServicos.class);
                 startActivity(i);
                 break;
+        }
+
+        switch (v.getId()) {
             case R.id.prodFalta:
                 i = new Intent(this, TabProdEmFalta.class);
-                startActivity(i);
-                break;
-            case R.id.addProduto:
-                i = new Intent(this, AddNewProduto.class);
                 startActivity(i);
                 break;
         }
