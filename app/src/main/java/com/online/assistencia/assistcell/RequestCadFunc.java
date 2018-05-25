@@ -1,5 +1,7 @@
 package com.online.assistencia.assistcell;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -58,10 +60,15 @@ public class RequestCadFunc extends AppCompatActivity {
                     newFuncionario.setEmail(editEmailFunc.getText().toString());
                     newFuncionario.setTelefone(editContact.getText().toString());
                     databaseReference.child("Requisicoes").child(newFuncionario.getId()).setValue(newFuncionario);
-
-
-                    Toast.makeText(getApplication(),
-                            "Requisição feita com Sucesso!", Toast.LENGTH_LONG).show();
+                    AlertDialog show = new AlertDialog.Builder(RequestCadFunc.this)
+                            .setTitle("Sucesso")
+                            .setMessage("Requisição feita com Sucesso!")
+                            .setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,int id) {
+                                    RequestCadFunc.this.finish();
+                                }
+                            })
+                            .show();
                     limparcampos();
                 }
             }

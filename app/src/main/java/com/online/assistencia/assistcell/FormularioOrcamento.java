@@ -1,5 +1,7 @@
 package com.online.assistencia.assistcell;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -98,8 +100,15 @@ public class FormularioOrcamento extends AppCompatActivity implements View.OnCli
                         newOrcamento.setRb_buscarAssist(rbn_buscarNaAssist.toString());
                     }
                     databaseReference.child("Orcamentos").child(newOrcamento.getId()).setValue(newOrcamento);
-                    Toast.makeText(getApplication(), "Seus dados foram enviados!",
-                            Toast.LENGTH_LONG).show();
+                    AlertDialog show = new AlertDialog.Builder(FormularioOrcamento.this)
+                            .setTitle("Sucesso")
+                            .setMessage("Seus dados foram enviados!")
+                            .setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,int id) {
+                                    FormularioOrcamento.this.finish();
+                                }
+                            })
+                            .show();
                     limparCampos();
                 }
             }

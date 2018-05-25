@@ -1,5 +1,7 @@
 package com.online.assistencia.assistcell;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -67,8 +69,15 @@ public class Solicitacao extends AppCompatActivity {
                     newSolicitacao.setNome(editNome.getText().toString());
                     newSolicitacao.setEmail(editEmail.getText().toString());
                     databaseReference.child("Solicitacao").child(newSolicitacao.getId()).setValue(newSolicitacao);
-                    Toast.makeText(getApplication(),
-                            "Produto solicitado com Sucesso!", Toast.LENGTH_LONG).show();
+                    AlertDialog show = new AlertDialog.Builder(Solicitacao.this)
+                            .setTitle("Sucesso")
+                            .setMessage("Produto solicitado com Sucesso!")
+                            .setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,int id) {
+                                    Solicitacao.this.finish();
+                                }
+                            })
+                            .show();
                     limparcampos();
                 }
             }
