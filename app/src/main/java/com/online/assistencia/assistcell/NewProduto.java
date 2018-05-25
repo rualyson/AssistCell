@@ -2,7 +2,7 @@ package com.online.assistencia.assistcell;
 
 public class NewProduto {
 
-    private String id, marca, modelo, rb_tela, rb_pelicula, rb_case, rb_fone, rb_diversos, rb_carregador;
+    private String id, marca, modelo, descricao, rb_tela, rb_pelicula, rb_case, rb_fone, rb_diversos, rb_carregador;
     private int quantidade, valor;
 
     public NewProduto(){
@@ -32,6 +32,14 @@ public class NewProduto {
         this.modelo = modelo;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     public int getQuantidade() {
         return quantidade;
     }
@@ -52,16 +60,14 @@ public class NewProduto {
         return rb_tela;
     }
 
-    public void setRb_tela(String rb_tela) {
-        this.rb_tela = rb_tela;
-    }
+    public void setRb_tela(String rb_tela) { this.rb_tela = "Telas"; }
 
     public String getRb_pelicula() {
         return rb_pelicula;
     }
 
     public void setRb_pelicula(String rb_pelicula) {
-        this.rb_pelicula = rb_pelicula;
+        this.rb_pelicula = "Películas";
     }
 
     public String getRb_case() {
@@ -69,7 +75,7 @@ public class NewProduto {
     }
 
     public void setRb_case(String rb_case) {
-        this.rb_case = rb_case;
+        this.rb_case = "Capinhas";
     }
 
     public String getRb_fone() {
@@ -77,7 +83,7 @@ public class NewProduto {
     }
 
     public void setRb_fone(String rb_fone) {
-        this.rb_fone = rb_fone;
+        this.rb_fone = "Fone";
     }
 
     public String getRb_diversos() {
@@ -85,7 +91,7 @@ public class NewProduto {
     }
 
     public void setRb_diversos(String rb_diversos) {
-        this.rb_diversos = rb_diversos;
+        this.rb_diversos = "Diversos";
     }
 
     public String getRb_carregador() {
@@ -93,6 +99,6 @@ public class NewProduto {
     }
 
     public void setRb_carregador(String rb_carregador) {
-        this.rb_carregador = rb_carregador;
+        this.rb_carregador = "Carregador";
     }
 }

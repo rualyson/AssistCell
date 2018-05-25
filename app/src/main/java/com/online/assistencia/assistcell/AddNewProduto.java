@@ -20,6 +20,7 @@ public class AddNewProduto extends AppCompatActivity {
     private EditText modelo; // modelo do produto
     private EditText qtd; // quantidade do produto
     private EditText valor;
+    private EditText desc;
     private RadioButton tela;
     private RadioButton cases;
     private RadioButton fones;
@@ -40,10 +41,11 @@ public class AddNewProduto extends AppCompatActivity {
             getSupportActionBar().setHomeButtonEnabled(true);      //Faz funcionar o botão
             getSupportActionBar().setTitle("Cadastro de Produtos");//Titulo para ser exibido na Action Bar
 
-            marca = (EditText) findViewById(R.id.editMarca);
-            modelo = (EditText) findViewById(R.id.editModelo);
-            qtd = (EditText) findViewById(R.id.editQuant);
-            valor = (EditText) findViewById(R.id.editValor);
+            marca = (EditText) findViewById(R.id.editCadMarca);
+            modelo = (EditText) findViewById(R.id.editCadModelo);
+            desc = (EditText) findViewById(R.id.editCadDescricao);
+            qtd = (EditText) findViewById(R.id.editCadQuant);
+            valor = (EditText) findViewById(R.id.editCadValor);
             tela = (RadioButton) findViewById(R.id.rbTelas);
             cases = (RadioButton) findViewById(R.id.rbCapinhas);
             fones = (RadioButton) findViewById(R.id.rbFones);
@@ -56,20 +58,44 @@ public class AddNewProduto extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     try {
-                        if (valor.getText().length() == 0 && modelo.getText().length() == 0 && marca.getText().length() == 0 &&
-                                qtd.getText().length() == 0) {
-                            Toast.makeText(getApplication(), "Os campos 'descrição', 'marca', 'quantidade', 'valor' são obrigatórios!",
+                        if (valor.getText().length() == 0 || modelo.getText().length() == 0 || marca.getText().length() == 0 ||
+                                qtd.getText().length() == 0 || desc.getText().length()==0) {
+                            Toast.makeText(getApplication(), "Todos os campos são obrigatórios!",
                                     Toast.LENGTH_SHORT).show();
                         } else if (!tela.isChecked() && !cases.isChecked() && !fones.isChecked() && !carregadores.isChecked() &&
                                 !diversos.isChecked() && !peliculas.isChecked()) {
                             Toast.makeText(getApplicationContext(), "Por favor, selecionar uma categoria!",
                                     Toast.LENGTH_SHORT).show();
                         } else {
+                            NewProduto newProduto = new NewProduto ();
+                            newProduto.setId(UUID.randomUUID().toString());
+                            newProduto.setMarca(marca.getText().toString());
+                            newProduto.setModelo(modelo.getText().toString());
+                            newProduto.setDescricao(desc.getText().toString());
+                            newProduto.setQuantidade(Integer.parseInt(qtd.getText().toString()));
+                            newProduto.setValor(Integer.parseInt(valor.getText().toString()));
+                            if (tela.isChecked()){
+                                newProduto.setRb_tela(tela.toString());
+                            } else if (cases.isChecked()){
+                                newProduto.setRb_case(cases.toString());
+                            } else if (carregadores.isChecked()){
+                                newProduto.setRb_carregador(carregadores.toString());
+                            } else if (peliculas.isChecked()){
+                                newProduto.setRb_pelicula(peliculas.toString());
+                            } else if (diversos.isChecked()){
+                                newProduto.setRb_diversos(diversos.toString());
+                            } else {
+                                newProduto.setRb_fone(fones.toString());
+                            }
+                            databaseReference.child("Produtos-Cadastrados").child(newProduto.getId()).setValue(newProduto); // cadastra no Firebase
+
                             Toast.makeText(getApplication(), "Cadastrado com sucesso!",
                                     Toast.LENGTH_SHORT).show();
+
+                            limparCampos();
                         }
                     } catch (Exception e){
-                        Toast.makeText(getApplication(), "Todos os campos são obrigatórios!",
+                        Toast.makeText(getApplication(), "Todos os campos são obrigatórios!*",
                                 Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -79,7 +105,9 @@ public class AddNewProduto extends AppCompatActivity {
     private void limparCampos() {
         marca.setText("");
         modelo.setText("");
+        desc.setText("");
         qtd.setText("");
+        valor.setText("");
     }
 
     private void inicializarFirebase() {
