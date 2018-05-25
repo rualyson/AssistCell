@@ -35,53 +35,53 @@
                 android:text="Categoria:"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-                <RadioGroup
-                    android:layout_marginTop="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+            <RadioGroup
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                    <RadioButton
-                        android:id="@+id/rbTelas"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Telas" />
+                <RadioButton
+                    android:id="@+id/rbTelas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Telas" />
 
-                    <RadioButton
-                        android:id="@+id/rbPeliculas"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Películas" />
+                <RadioButton
+                    android:id="@+id/rbPeliculas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Películas" />
 
-                    <RadioButton
-                        android:id="@+id/rbFones"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Fones de Ouvido" />
+                <RadioButton
+                    android:id="@+id/rbFones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Fones de Ouvido" />
 
-                    <RadioButton
-                        android:id="@+id/rbCapinhas"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Capinhas" />
+                <RadioButton
+                    android:id="@+id/rbCapinhas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Capinhas" />
 
-                    <RadioButton
-                        android:id="@+id/rbCarregadores"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Carregador" />
+                <RadioButton
+                    android:id="@+id/rbCarregadores"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Carregador" />
 
-                    <RadioButton
-                        android:id="@+id/rbDiversos"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Diversos" />
-                </RadioGroup>
+                <RadioButton
+                    android:id="@+id/rbDiversos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Diversos" />
+            </RadioGroup>
 
             <TextView
                 android:layout_width="258dp"
