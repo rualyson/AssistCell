@@ -94,4 +94,12 @@ public class NewProdutoF {
     public NewProdutoF(){
 
     }
+
+    @Override
+    public String toString() {
+        return  "Marca = " + marcaProdF + '\n' +
+                "Modelo = " + modeloProdF + '\n' +
+                "Descrição = " + desProdF + '\n' +
+                "Quantidade = " + quantProdF + '\n';
+    }
 }
