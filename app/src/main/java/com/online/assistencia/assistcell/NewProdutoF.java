@@ -97,9 +97,43 @@ public class NewProdutoF {
 
     @Override
     public String toString() {
-        return  "Marca = " + marcaProdF + '\n' +
-                "Modelo = " + modeloProdF + '\n' +
-                "Descrição = " + desProdF + '\n' +
-                "Quantidade = " + quantProdF + '\n';
+        if(rb_telas!=null){
+            return  "Categoria = "+rb_telas+'\n'+
+                    "Marca = " + marcaProdF + '\n' +
+                    "Modelo = " + modeloProdF + '\n' +
+                    "Descrição = " + desProdF + '\n' +
+                    "Quantidade restante = " + quantProdF + '\n';
+        }else if(rb_peliculas!=null){
+            return  "Categoria = "+rb_peliculas+'\n'+
+                    "Marca = " + marcaProdF + '\n' +
+                    "Modelo = " + modeloProdF + '\n' +
+                    "Descrição = " + desProdF + '\n' +
+                    "Quantidade restante = " + quantProdF + '\n';
+        }else if(rb_fone!=null){
+            return  "Categoria = "+rb_fone+'\n'+
+                    "Marca = " + marcaProdF + '\n' +
+                    "Modelo = " + modeloProdF + '\n' +
+                    "Descrição = " + desProdF + '\n' +
+                    "Quantidade restante = " + quantProdF + '\n';
+        }else if(rb_cases!=null){
+            return  "Categoria = "+rb_cases+'\n'+
+                    "Marca = " + marcaProdF + '\n' +
+                    "Modelo = " + modeloProdF + '\n' +
+                    "Descrição = " + desProdF + '\n' +
+                    "Quantidade restante = " + quantProdF + '\n';
+        }else if(rb_carregador!=null){
+            return  "Categoria = "+rb_carregador+'\n'+
+                    "Marca = " + marcaProdF + '\n' +
+                    "Modelo = " + modeloProdF + '\n' +
+                    "Descrição = " + desProdF + '\n' +
+                    "Quantidade restante = " + quantProdF + '\n';
+        }else{
+            return  "Categoria = "+rb_diversos+'\n'+
+                    "Marca = " + marcaProdF + '\n' +
+                    "Modelo = " + modeloProdF + '\n' +
+                    "Descrição = " + desProdF + '\n' +
+                    "Quantidade restante = " + quantProdF + '\n';
+        }
+
     }
 }
