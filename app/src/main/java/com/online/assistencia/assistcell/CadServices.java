@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
-
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -24,6 +23,7 @@ public class CadServices extends AppCompatActivity implements View.OnClickListen
     private RadioButton ac_Carregador;
     private RadioButton ac_sem;
     private RadioButton ac_Outros;
+    private RadioButton ac_sem;
     private Button enviar;
 
 
@@ -93,6 +93,10 @@ public class CadServices extends AppCompatActivity implements View.OnClickListen
                             newOS.setAc_outros(ac_Outros.toString());
                         }
                         databaseReference.child("OS").child(newOS.getId()).setValue(newOS);
+                    if (ac_Outros.isChecked() == true && txtOutros.getText().length() == 0 ){
+                        Toast.makeText(getApplication(), "Caso seja outro tipo de acessório, especifique",
+                                Toast.LENGTH_LONG).show();
+                    }else {
                         Toast.makeText(getApplication(), "Concluido com sucesso!",
                                 Toast.LENGTH_LONG).show();
                         limparCampos();
