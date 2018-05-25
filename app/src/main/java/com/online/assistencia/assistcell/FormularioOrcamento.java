@@ -34,7 +34,7 @@ public class FormularioOrcamento extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_orcamento);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle("Formulario de Orcamento");
+        getSupportActionBar().setTitle("Formulário de Orcamento");
 
         nomeCli = (EditText) findViewById(R.id.editNome);
         Marca = (EditText) findViewById(R.id.editMarca);
