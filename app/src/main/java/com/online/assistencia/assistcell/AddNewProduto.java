@@ -40,7 +40,7 @@ public class AddNewProduto extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostra o botão
             getSupportActionBar().setHomeButtonEnabled(true);      //Faz funcionar o botão
             getSupportActionBar().setTitle("Cadastro de Produtos");//Titulo para ser exibido na Action Bar
-
+      
             marca = (EditText) findViewById(R.id.editCadMarca);
             modelo = (EditText) findViewById(R.id.editCadModelo);
             desc = (EditText) findViewById(R.id.editCadDescricao);
@@ -96,9 +96,7 @@ public class AddNewProduto extends AppCompatActivity {
                         }
                     } catch (Exception e){
                         Toast.makeText(getApplication(), "Todos os campos são obrigatórios!*",
-                                Toast.LENGTH_SHORT).show();
                     }
-                }
             }); inicializarFirebase();
     }
 
