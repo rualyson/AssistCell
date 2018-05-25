@@ -3,7 +3,8 @@ package com.online.assistencia.assistcell;
 public class NewProduto {
 
     private String id, marca, modelo, descricao, rb_tela, rb_pelicula, rb_case, rb_fone, rb_diversos, rb_carregador;
-    private int quantidade, valor;
+    private int quantidade;
+    private Double valor;
 
     public NewProduto(){
     }
@@ -48,11 +49,11 @@ public class NewProduto {
         this.quantidade = quantidade;
     }
 
-    public int getValor() {
+    public Double getValor() {
         return valor;
     }
 
-    public void setValor(int valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 
