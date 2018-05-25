@@ -1,5 +1,7 @@
 package com.online.assistencia.assistcell;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -75,8 +77,16 @@ public class CadastroFuncionarios extends AppCompatActivity implements View.OnCl
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(CadastroFuncionarios.this, "Registrado com sucesso!",Toast.LENGTH_SHORT).show();
-                        }else{
+                            AlertDialog show = new AlertDialog.Builder(CadastroFuncionarios.this)
+                                    .setTitle("Sucesso")
+                                    .setMessage("Registrado com sucesso!")
+                                    .setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog,int id) {
+                                            CadastroFuncionarios.this.finish();
+                                        }
+                                    })
+                                    .show();
+                            }else{
                             Toast.makeText(CadastroFuncionarios.this, "Falha ao registrar",Toast.LENGTH_SHORT).show();
 
                         }

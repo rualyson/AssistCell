@@ -1,5 +1,7 @@
 package com.online.assistencia.assistcell;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -92,8 +94,15 @@ public class CadServices extends AppCompatActivity implements View.OnClickListen
                             Toast.makeText(getApplication(), "Caso seja outro tipo de acessório, especifique",
                                     Toast.LENGTH_LONG).show();
                         } else {
-                            Toast.makeText(getApplication(), "Concluido com sucesso!",
-                                    Toast.LENGTH_LONG).show();
+                            AlertDialog show = new AlertDialog.Builder(CadServices.this)
+                                    .setTitle("Sucesso")
+                                    .setMessage("Concluido com sucesso!")
+                                    .setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog,int id) {
+                                            CadServices.this.finish();
+                                        }
+                                    })
+                                    .show();
                             limparCampos();
                         }
                     }

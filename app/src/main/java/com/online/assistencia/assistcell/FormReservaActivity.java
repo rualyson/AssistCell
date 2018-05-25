@@ -1,7 +1,9 @@
 package com.online.assistencia.assistcell;
 
+import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -60,9 +62,15 @@ public class FormReservaActivity extends AppCompatActivity {
                     newReserva.setEmail(editEmail.getText().toString());
                     databaseReference.child("Reservas").child(newReserva.getId()).setValue(newReserva);
 
-
-                    Toast.makeText(getApplication(),
-                            "Reservado com Sucesso!", Toast.LENGTH_LONG).show();
+                    AlertDialog show = new AlertDialog.Builder(FormReservaActivity.this)
+                            .setTitle("Sucesso")
+                            .setMessage("Reservado com Sucesso!")
+                            .setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,int id) {
+                                    FormReservaActivity.this.finish();
+                                }
+                            })
+                            .show();
                     limparcampos();
                 }
             }

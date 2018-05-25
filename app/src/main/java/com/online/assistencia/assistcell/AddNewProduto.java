@@ -1,5 +1,7 @@
 package com.online.assistencia.assistcell;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -88,10 +90,15 @@ public class AddNewProduto extends AppCompatActivity {
                             newProduto.setRb_fone(fones.toString());
                         }
                         databaseReference.child("Produtos-Cadastrados").child(newProduto.getId()).setValue(newProduto); // cadastra no Firebase
-
-                        Toast.makeText(getApplication(), "Cadastrado com sucesso!",
-                                Toast.LENGTH_SHORT).show();
-
+                        AlertDialog show = new AlertDialog.Builder(AddNewProduto.this)
+                                .setTitle("Sucesso")
+                                .setMessage("Cadastrado com sucesso!")
+                                .setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog,int id) {
+                                        AddNewProduto.this.finish();
+                                    }
+                                })
+                                .show();
                         limparCampos();
                     }
                 } catch (Exception e){

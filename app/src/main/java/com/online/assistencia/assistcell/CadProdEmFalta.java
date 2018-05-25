@@ -1,5 +1,7 @@
 package com.online.assistencia.assistcell;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -81,8 +83,15 @@ public class CadProdEmFalta extends AppCompatActivity {
                             newProdutoF.setRb_diversos(rdDiversos.toString());
                         }
                         databaseReference.child("ProdutosF").child(newProdutoF.getId()).setValue(newProdutoF);
-                        Toast.makeText(getApplication(),
-                                "Produto cadastrado com Sucesso!", Toast.LENGTH_LONG).show();
+                        AlertDialog show = new AlertDialog.Builder(CadProdEmFalta.this)
+                                .setTitle("Sucesso")
+                                .setMessage("Produto cadastrado com Sucesso!")
+                                .setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        CadProdEmFalta.this.finish();
+                                    }
+                                })
+                                .show();
                         limparCampos();
 
                     }
