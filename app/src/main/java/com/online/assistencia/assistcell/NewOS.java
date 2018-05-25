@@ -141,6 +141,7 @@ public class NewOS {
     public void setText_outros(String text_outros) {
         this.text_outros = text_outros;
     }
+
     public String getAc_sem() {
         return ac_sem;
     }
@@ -149,13 +150,6 @@ public class NewOS {
         this.ac_sem = "Sem acessorios";
     }
 
-    public String getAc_sem() {
-        return ac_sem;
-    }
-
-    public void setAc_sem(String acSem) {
-        this.ac_carregador = "Sem acessórios";
-    }
 
     public void NewOs(){
 
