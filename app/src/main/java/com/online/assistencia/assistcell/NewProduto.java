@@ -102,4 +102,51 @@ public class NewProduto {
     public void setRb_carregador(String rb_carregador) {
         this.rb_carregador = "Carregador";
     }
+
+    @Override
+    public String toString() {
+        if (rb_carregador!=null){
+            return "Categoria = " + rb_carregador + '\n'+
+                    "Marca = " + marca + '\n' +
+                    "Modelo = " + modelo + '\n' +
+                    "Descricao = " + descricao + '\n' +
+                    "quantidade = " + quantidade + '\n'+
+                    "Valor = " + valor;
+        } else if (rb_case!= null){
+            return "Categoria = "+rb_case+'\n'+
+                    "Marca = " + marca + '\n' +
+                    "Modelo = " + modelo + '\n' +
+                    "Descricao = " + descricao + '\n' +
+                    "quantidade = " + quantidade + '\n'+
+                    "Valor = " + valor;
+        } else if(rb_diversos!=null){
+            return "Categoria = "+rb_diversos+'\n'+
+                    "Marca = " + marca + '\n' +
+                    "Modelo = " + modelo + '\n' +
+                    "Descricao = " + descricao + '\n' +
+                    "quantidade = " + quantidade + '\n'+
+                    "Valor = " + valor;
+        }else if(rb_fone!=null){
+            return "Categoria = "+rb_fone+'\n'+
+                    "Marca = " + marca + '\n' +
+                    "Modelo = " + modelo + '\n' +
+                    "Descricao = " + descricao + '\n' +
+                    "quantidade = " + quantidade + '\n'+
+                    "Valor = " + valor;
+        }else if(rb_pelicula!=null){
+            return "Categoria = "+rb_pelicula+'\n'+
+                    "Marca = " + marca + '\n' +
+                    "Modelo = " + modelo + '\n' +
+                    "Descricao = " + descricao + '\n' +
+                    "quantidade = " + quantidade + '\n'+
+                    "Valor = " + valor;
+        }else {
+            return "Categoria = "+rb_tela+'\n'+
+                    "Marca = " + marca + '\n' +
+                    "Modelo = " + modelo + '\n' +
+                    "Descricao = " + descricao + '\n' +
+                    "quantidade = " + quantidade + '\n'+
+                    "Valor = " + valor;
+        }
+    }
 }

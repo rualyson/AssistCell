@@ -125,7 +125,7 @@ public class AddNewProduto extends AppCompatActivity {
         public boolean onOptionsItemSelected(MenuItem item) { //Botão adicional na ToolBar
             switch (item.getItemId()) {
                 case android.R.id.home:  //ID do seu botão
-                    startActivity(new Intent(this,DashADM.class));
+                    startActivity(new Intent(this,TabProdCadN.class));
                     finishAffinity();  //Matar activity
                     break;
                 default:break;
