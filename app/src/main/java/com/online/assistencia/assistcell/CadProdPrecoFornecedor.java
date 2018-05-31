@@ -13,7 +13,7 @@ public class CadProdPrecoFornecedor extends AppCompatActivity {
 
     private RadioButton rdTelas, rdPeliculas, rdFones, rdCapinhas, rdCarregador, rdDiversos;
 
-    private EditText editMarca, editModelo, editQuant, editDescricao, editvalorDeCompra, editCnpj, editCodIdentificacao,
+    private EditText editMarca, editModelo,editDescricao, editValorCompra, editCnpj, editCodIdentificacao,
             editFornecedor;
 
     private Button botCadastrar;
@@ -24,19 +24,18 @@ public class CadProdPrecoFornecedor extends AppCompatActivity {
         setContentView(R.layout.activity_cad_prod_preco_fornecedor);
         editMarca = (EditText) findViewById(R.id.editMarca);
         editModelo = (EditText) findViewById(R.id.editModelo);
-        editQuant = (EditText) findViewById(R.id.editQuant);
         editDescricao = (EditText) findViewById(R.id.editDescricao);
-        editvalorDeCompra = (EditText) findViewById(R.id.editValorCompra);
-        editCnpj = (EditText) findViewById(R.id.editCadCnpj);
+        editValorCompra = (EditText) findViewById(R.id.editValorCompra);
+        editCnpj = (EditText) findViewById(R.id.editCnpj);
         editCodIdentificacao = (EditText) findViewById(R.id.editCodIdent);
         editFornecedor =(EditText) findViewById(R.id.editCadFornecedor);
 
-        rdTelas = (RadioButton) findViewById(R.id.radioButtonTelas);
-        rdPeliculas = (RadioButton) findViewById(R.id.radioButtonPeliculas);
-        rdFones = (RadioButton) findViewById(R.id.radioButtonFones);
-        rdCapinhas = (RadioButton) findViewById(R.id.radioButtonCapinhas);
-        rdCarregador = (RadioButton) findViewById(R.id.radioButtonCarregadores);
-        rdDiversos = (RadioButton) findViewById(R.id.radioButtonDiversos);
+        rdTelas = (RadioButton) findViewById(R.id.rbTelas);
+        rdPeliculas = (RadioButton) findViewById(R.id.rbPeliculas);
+        rdFones = (RadioButton) findViewById(R.id.rbFones);
+        rdCapinhas = (RadioButton) findViewById(R.id.rbFones);
+        rdCarregador = (RadioButton) findViewById(R.id.rbCarregadores);
+        rdDiversos = (RadioButton) findViewById(R.id.rbDiversos);
 
         botCadastrar = (Button) findViewById(R.id.botCadastrar);
 
@@ -45,13 +44,11 @@ public class CadProdPrecoFornecedor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //NÃO COLOQUEI DESCRIÇÃO PQ ACREDITO SER UM ITEM OPCIONAL
-                if (editMarca.getText().length() == 0 || editModelo.getText().length() == 0
-                        || editQuant.getText().length() == 0 || editFornecedor.getText().length() == 0
-                        || editvalorDeCompra.getText().length() == 0 || editCodIdentificacao.getText().length() == 0
-                        || editCnpj.getText().length() == 0) {
-                    Toast.makeText(getApplication(), "ERRO! Os campos 'Fornecedor', 'CNPJ' 'Código de Identificacao'" +
-                                    " 'Marca', 'Modelo', 'Quantidade'" +
-                                    "'Valor de Compra' são obrigatórios!",
+                if (editMarca.getText().length() == 0 || editModelo.getText().length() == 0 ||
+                       editCnpj.getText().length() == 0 || editFornecedor.getText().length() == 0 ||
+                        editValorCompra.getText().length() == 0 || editCodIdentificacao.getText().length() == 0) {
+                    Toast.makeText(getApplication(), "ERRO! Os campos 'Fornecedor', CNPJ, 'Marca', 'Código de Identificação', " +
+                                    "'Modelo' e 'Valor da Compra' são obrigatórios!",
                             Toast.LENGTH_LONG).show();
                 }
                 if (rdTelas.isChecked() == false && rdPeliculas.isChecked() == false
@@ -62,7 +59,7 @@ public class CadProdPrecoFornecedor extends AppCompatActivity {
                 }
                 else {
                     Toast.makeText(getApplication(),
-                            "Produto cadastrado com Sucesso!", Toast.LENGTH_LONG).show();
+                            "Preço cadastrado com Sucesso!", Toast.LENGTH_LONG).show();
                 }
             }
         });

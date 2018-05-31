@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".AddNewProduto">
+    tools:context=".CadProdPrecoFornecedor">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -13,9 +12,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginLeft="5dp">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView8"
@@ -24,8 +23,8 @@
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="15dp"
                 android:text="Para concluir o cadastro, por favor, digite as seguintes informações:\n\nOBS: No caso de produtos diversos como chips de operadora, preencher da seguinte forma:\n • Marca: Tim\n • Modelo: Chip"
-                android:textSize="15dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="15dp" />
 
             <TextView
                 android:layout_width="258dp"
@@ -61,12 +60,12 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <EditText
-                android:id="@+id/editCadCnpj"
+                android:id="@+id/editCnpj"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="0dp"
                 android:ems="10"
-                android:hint="Nome da empresa fornecedora do produto"
+                android:hint="CNPJ da empresa fornecedora do produto"
                 android:inputType="numberDecimal" />
 
             <TextView
@@ -87,10 +86,9 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <RadioGroup
-                android:layout_width="352dp"
-                android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <RadioButton
                     android:id="@+id/rbTelas"
@@ -113,15 +111,6 @@
                     android:layout_weight="1"
                     android:text="Fones de Ouvido" />
 
-
-            </RadioGroup>
-
-            <RadioGroup
-                android:layout_width="352dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
-
                 <RadioButton
                     android:id="@+id/rbCapinhas"
                     android:layout_width="wrap_content"
@@ -142,7 +131,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Diversos" />
-
             </RadioGroup>
 
             <TextView
@@ -159,7 +147,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="0dp"
                 android:ems="10"
-                android:hint="Ex: Samsung, LG, Xiaomi"
+                android:hint="Ex: 12345"
                 android:inputType="numberDecimal" />
 
             <TextView
@@ -171,7 +159,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <EditText
-                android:id="@+id/editCadMarca"
+                android:id="@+id/editMarca"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="0dp"
@@ -188,7 +176,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <EditText
-                android:id="@+id/editCadModelo"
+                android:id="@+id/editModelo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="0dp"
@@ -212,24 +200,6 @@
                 android:ems="10"
                 android:hint="Ex: Película de vidro, película de plástico"
                 android:inputType="textPersonName" />
-
-
-            <TextView
-                android:layout_width="258dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:layout_marginTop="25dp"
-                android:text="Quantidade:"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-            <EditText
-                android:id="@+id/editCadQuant"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
-                android:ems="10"
-                android:hint="Ex: 5"
-                android:inputType="numberDecimal" />
 
             <TextView
                 android:layout_width="258dp"
@@ -261,7 +231,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="30dp" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
