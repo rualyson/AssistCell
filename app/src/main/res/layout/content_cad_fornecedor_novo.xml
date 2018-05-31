@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.online.assistencia.assistcell.CadFornecedorNovo"
+    tools:showIn="@layout/activity_cad_fornecedor_novo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="352dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="15dp"
+                android:text="Para fazer um cadastro correto, preencha todos os dados de maneira correta, não deixar nenhum dos campos em Branco!"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <RadioGroup
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="Empresa"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editCadEmp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:ems="10"
+                android:hint="Digite o nome da empresa do fornecedor"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="Representante"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editCadRep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:ems="10"
+                android:hint="Digite o nome do Representante da empresa"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="Endereço"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editCadEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:ems="10"
+                android:hint="Digite o endereço da empresa"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="Número"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+
+            <EditText
+                android:id="@+id/editCadNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:ems="10"
+                android:hint="Ex: 1, 2, 10, ..."
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="Bairro"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editCadBai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:ems="10"
+                android:hint="Digite o Bairro"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="Cidade"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editCadCid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:ems="10"
+                android:hint="Digite a Cidade da empresa"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="CEP"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editCadCep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:ems="10"
+                android:hint="Digite o CEP da Empresa"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="UF"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editCadUf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:ems="10"
+                android:hint="Digite a UF da empresa"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="País"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editCadPais"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:ems="10"
+                android:hint="Digite o País da empresa"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="Complemento"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editCadCom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:ems="10"
+                android:hint="Digite o Complemento"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="Ponto de Referência"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editCadRef"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:ems="10"
+                android:hint="Digite um Ponto de Referência da empresa"
+                android:inputType="textPersonName" />
+
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="CNPJ"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editCadCnpj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:ems="10"
+                android:hint="Digite o CNPJ da Empresa"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="Email"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editCadEma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Digite o email da empresa"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                android:layout_width="258dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="25dp"
+                android:text="Telefone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:id="@+id/editCadTel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Digite o Telefone da empresa"
+                android:inputType="phone" />
+
+            <Button
+                android:id="@+id/botCad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rounded_button_transparent"
+                android:text="Cadastrar"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
