@@ -45,7 +45,7 @@ public class CadProdPrecoFornecedor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //NÃO COLOQUEI DESCRIÇÃO PQ ACREDITO SER UM ITEM OPCIONAL
-                if ((editMarca.getText().length() == 0) || (editModelo.getText().length() == 0)
+                if (editMarca.getText().length() == 0 || editModelo.getText().length() == 0
                         || editQuant.getText().length() == 0 || editFornecedor.getText().length() == 0
                         || editvalorDeCompra.getText().length() == 0 || editCodIdentificacao.getText().length() == 0
                         || editCnpj.getText().length() == 0) {
