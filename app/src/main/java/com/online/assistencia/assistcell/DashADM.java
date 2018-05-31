@@ -21,6 +21,7 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
     private CardView prodEmFalta;
     private CardView addProduto;
     private CardView fornec;
+    private CardView reserv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,8 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
         addProduto.setOnClickListener(this);
         fornec = (CardView) findViewById(R.id.fornecedores);
         fornec.setOnClickListener(this);
+        reserv = (CardView) findViewById(R.id.reservas);
+        reserv.setOnClickListener(this);
 
     }
 
@@ -86,6 +89,10 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.fornecedores:
                 i = new Intent(this, EscFornecedor.class);
+                startActivity(i);
+                break;
+            case R.id.reservas:
+                i = new Intent(this, Reservas.class);
                 startActivity(i);
                 break;
         }
