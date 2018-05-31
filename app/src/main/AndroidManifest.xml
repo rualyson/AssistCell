@@ -55,7 +55,8 @@
             android:label="@string/title_activity_tab_prod_em_falta"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".EscFornecedor" />
-        <activity android:name=".CadProdPrecoFornecedor"></activity>
+        <activity android:name=".CadProdPrecoFornecedor" />
+        <activity android:name=".ListNotification"></activity>
     </application>
 
 </manifest>

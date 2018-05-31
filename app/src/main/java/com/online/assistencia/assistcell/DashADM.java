@@ -57,6 +57,9 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
             startActivity(new Intent(this, LoginActivity.class));
             finish();
             return true;
+        }else if(id == R.id.notification){
+            startActivity(new Intent(this, ListNotification.class));
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
