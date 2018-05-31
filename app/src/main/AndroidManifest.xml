@@ -50,6 +50,7 @@
         <activity android:name=".CadProdEmFalta" />
         <activity android:name=".AddNewProduto" />
         <activity android:name=".TabProdCadN" />
+        <activity android:name=".EscFornecedor" />
         <activity
             android:name=".TabProdEmFalta"
             android:label="@string/title_activity_tab_prod_em_falta"
