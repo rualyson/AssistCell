@@ -37,14 +37,14 @@ public class EscFornecedor extends AppCompatActivity implements View.OnClickList
                         .setPositiveButton("Fornecedor",new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,int id) {
                                 //substituir o CadProdEmFalta pela classe que irá direcionar
-                                Intent intent = new Intent(EscFornecedor.this, CadProdEmFalta.class);
+                                Intent intent = new Intent(EscFornecedor.this, CadFornecedorNovo.class);
                                 startActivity(intent);
                             }
                         })
                         .setNegativeButton("Preço p/ fornecedor",new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,int id) {
                                 //substituir o CadProdEmFalta pela classe que irá direcionar
-                                Intent intent = new Intent(EscFornecedor.this, CadProdEmFalta.class);
+                                Intent intent = new Intent(EscFornecedor.this, CadProdPrecoFornecedor.class);
                                 startActivity(intent);
                             }
                         })

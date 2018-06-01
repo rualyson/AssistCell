@@ -42,6 +42,7 @@
         <activity android:name=".CadastroFuncionarios" />
         <activity android:name=".SolicitLogin" />
         <activity android:name=".EscCadastro" />
+        <activity android:name=".Reservas" />
         <activity
             android:name=".TabServicos"
             android:label="@string/title_activity_main"
