@@ -42,6 +42,7 @@
         <activity android:name=".CadastroFuncionarios" />
         <activity android:name=".SolicitLogin" />
         <activity android:name=".EscCadastro" />
+        <activity android:name=".Reservas" />
         <activity
             android:name=".TabServicos"
             android:label="@string/title_activity_main"
@@ -50,16 +51,12 @@
         <activity android:name=".CadProdEmFalta" />
         <activity android:name=".AddNewProduto" />
         <activity android:name=".TabProdCadN" />
-        <activity android:name=".EscFornecedor" />
-        <activity android:name=".CadProdPrecoFornecedor" />
         <activity
             android:name=".TabProdEmFalta"
             android:label="@string/title_activity_tab_prod_em_falta"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".CadFornecedorNovo"
-            android:label="@string/title_activity_cad_fornecedor_novo"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".EscFornecedor" />
+        <activity android:name=".Reservas"></activity>
     </application>
 
 </manifest>

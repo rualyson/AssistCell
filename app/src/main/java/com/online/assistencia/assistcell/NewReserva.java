@@ -63,6 +63,16 @@ public class NewReserva {
         Data = data;
     }
 
+    public String toString() {
+        return "Nome: "+ Nome +"\n"+
+                "ID: "+ id +"\n"+
+                "Marca: " + Marca + "\n" +
+                "Modelo: " + Modelo + "\n"+
+                "Email: " + Email + "\n"+
+                "Telefone: " + Telefone + "\n"+
+                "Data: " + Data + "\n";
+    }
+
     private String Email;
     private String Telefone;
     private String Data;
