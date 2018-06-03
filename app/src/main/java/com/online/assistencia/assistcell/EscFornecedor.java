@@ -59,9 +59,8 @@ public class EscFornecedor extends AppCompatActivity implements View.OnClickList
 
         switch (v.getId()) {
             case R.id.ListForn:
-                //substituir o SolicitLogin pela classe que irá direcionar
-                //i = new Intent(this, SolicitLogin.class);
-                //startActivity(i);
+                i = new Intent(this, TabFornecedores.class);
+                startActivity(i);
                 break;
             case R.id.ListPreco:
                 //substituir o CadastroFuncionario pela classe que irá direcionar

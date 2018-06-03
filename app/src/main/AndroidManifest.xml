@@ -57,6 +57,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".EscFornecedor" />
         <activity android:name=".CadFornecedorNovo" />
+        <activity android:name=".TabFornecedores"></activity>
     </application>
 
 </manifest>
