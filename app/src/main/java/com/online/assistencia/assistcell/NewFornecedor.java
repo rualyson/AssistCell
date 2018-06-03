@@ -2,20 +2,7 @@ package com.online.assistencia.assistcell;
 
 public class NewFornecedor {
 
-    private String id;
-    private String empresa;
-    private String representante;
-    private String endereco;
-    private String numeroEnd;
-    private String bairroEnd;
-    private String cidadeEnd;
-    private String cepEnd;
-    private String ufEnd;
-    private String paisEnd;
-    private String complEnd;
-    private String refEnd;
-    private String email;
-    private String cnpj;
+    private String id,empresa,representante,endereco,numeroEnd,bairroEnd,cidadeEnd,cepEnd,ufEnd,paisEnd,complEnd,refEnd,email,cnpj;
 
     public String getCnpj() {
         return cnpj;
