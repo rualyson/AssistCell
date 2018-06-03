@@ -12,6 +12,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
+
 import static com.online.assistencia.assistcell.R.layout.activity_cad_fornecedor_novo;
 
 
@@ -20,6 +26,9 @@ public class CadFornecedorNovo extends AppCompatActivity {
 
     private EditText editCadEmp,editCadRep,editCadEnd,editCadNum,editCadBai,editCadCid,editCadCep,editCadUf,editCadPais,editCadCom,editCadRef,editCadCnpj,editCadEma,editCadTel;
     private Button botCad;
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +73,23 @@ public class CadFornecedorNovo extends AppCompatActivity {
 
 
                 else {
-
+                    NewFornecedor newFornecedor = new NewFornecedor();
+                    newFornecedor.setId(UUID.randomUUID().toString());
+                    newFornecedor.setEmpresa(editCadEmp.getText().toString());
+                    newFornecedor.setRepresentante(editCadRep.getText().toString());
+                    newFornecedor.setEndereco(editCadEnd.getText().toString());
+                    newFornecedor.setNumeroEnd(editCadNum.getText().toString());
+                    newFornecedor.setBairroEnd(editCadBai.getText().toString());
+                    newFornecedor.setCidadeEnd(editCadCid.getText().toString());
+                    newFornecedor.setCepEnd(editCadCep.getText().toString());
+                    newFornecedor.setUfEnd(editCadUf.getText().toString());
+                    newFornecedor.setPaisEnd(editCadPais.getText().toString());
+                    newFornecedor.setComplEnd(editCadCom.getText().toString());
+                    newFornecedor.setRefEnd(editCadRef.getText().toString());
+                    newFornecedor.setCnpj(editCadCnpj.getText().toString());
+                    newFornecedor.setEmail(editCadCnpj.getText().toString());
+                    newFornecedor.setContact(editCadTel.getText().toString());
+                    databaseReference.child("Fornecedores").child(newFornecedor.getId()).setValue(newFornecedor);
                     AlertDialog show = new AlertDialog.Builder(CadFornecedorNovo.this)
                             .setTitle("Sucesso")
                             .setMessage("Fornecedor cadastrado com Sucesso!")
@@ -78,6 +103,12 @@ public class CadFornecedorNovo extends AppCompatActivity {
                 }
             }
         });
+        inicializarFirebase();
+    }
+    private void inicializarFirebase() {
+        FirebaseApp.initializeApp(CadFornecedorNovo .this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference =  firebaseDatabase.getReference();
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
