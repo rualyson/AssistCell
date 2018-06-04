@@ -1,6 +1,8 @@
 package com.online.assistencia.assistcell;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,26 +11,34 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
+
 public class CadProdPrecoFornecedor extends AppCompatActivity {
 
     private RadioButton rdTelas, rdPeliculas, rdFones, rdCapinhas, rdCarregador, rdDiversos;
 
-    private EditText editMarca, editModelo,editDescricao, editValorCompra, editCnpj, editCodIdentificacao,
-            editFornecedor;
+    private EditText Marca, Modelo,Descricao, ValorCompra, Cnpj, CodIdentificacao, Fornecedor;
 
     private Button botCadastrar;
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cad_prod_preco_fornecedor);
-        editMarca = (EditText) findViewById(R.id.editMarca);
-        editModelo = (EditText) findViewById(R.id.editModelo);
-        editDescricao = (EditText) findViewById(R.id.editDescricao);
-        editValorCompra = (EditText) findViewById(R.id.editValorCompra);
-        editCnpj = (EditText) findViewById(R.id.editCnpj);
-        editCodIdentificacao = (EditText) findViewById(R.id.editCodIdent);
-        editFornecedor =(EditText) findViewById(R.id.editCadFornecedor);
+        Marca = (EditText) findViewById(R.id.editMarca);
+        Modelo = (EditText) findViewById(R.id.editModelo);
+        Descricao = (EditText) findViewById(R.id.editCadDescricao);
+        ValorCompra = (EditText) findViewById(R.id.editValorCompra);
+        Cnpj = (EditText) findViewById(R.id.editCnpj);
+        CodIdentificacao = (EditText) findViewById(R.id.editCodIdent);
+        Fornecedor = (EditText) findViewById(R.id.editCadFornecedor);
 
         rdTelas = (RadioButton) findViewById(R.id.rbTelas);
         rdPeliculas = (RadioButton) findViewById(R.id.rbPeliculas);
@@ -44,9 +54,9 @@ public class CadProdPrecoFornecedor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //NÃO COLOQUEI DESCRIÇÃO PQ ACREDITO SER UM ITEM OPCIONAL
-                if (editMarca.getText().length() == 0 || editModelo.getText().length() == 0 ||
-                       editCnpj.getText().length() == 0 || editFornecedor.getText().length() == 0 ||
-                        editValorCompra.getText().length() == 0 || editCodIdentificacao.getText().length() == 0) {
+                if (Marca.getText().length() == 0 || Modelo.getText().length() == 0 ||
+                        Cnpj.getText().length() == 0 || Fornecedor.getText().length() == 0 ||
+                        ValorCompra.getText().length() == 0 || CodIdentificacao.getText().length() == 0) {
                     Toast.makeText(getApplication(), "ERRO! Os campos 'Fornecedor', CNPJ, 'Marca', 'Código de Identificação', " +
                                     "'Modelo' e 'Valor da Compra' são obrigatórios!",
                             Toast.LENGTH_LONG).show();
@@ -56,12 +66,59 @@ public class CadProdPrecoFornecedor extends AppCompatActivity {
                         && rdCarregador.isChecked() == false && rdDiversos.isChecked() == false) {
                     Toast.makeText(getApplicationContext(), "ERRO! Selecione uma categoria!",
                             Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Toast.makeText(getApplication(),
-                            "Preço cadastrado com Sucesso!", Toast.LENGTH_LONG).show();
+                } else {
+                    NewPrecoForn newPrecoForn = new NewPrecoForn();
+                    newPrecoForn.setId(UUID.randomUUID().toString());
+                    newPrecoForn.setMarca(Marca.getText().toString());
+                    newPrecoForn.setModelo(Modelo.getText().toString());
+                    newPrecoForn.setDescricao(Descricao.getText().toString());
+                    newPrecoForn.setValorCompra(ValorCompra.getText().toString());
+                    newPrecoForn.setCnpj(Cnpj.getText().toString());
+                    newPrecoForn.setCodIdentificacao(CodIdentificacao.getText().toString());
+                    newPrecoForn.setFornecedor(Fornecedor.getText().toString());
+                    if (rdTelas.isChecked()) {
+                        newPrecoForn.setRb_telas(rdTelas.toString());
+                    } else if (rdCapinhas.isChecked()) {
+                        newPrecoForn.setRb_cases(rdCapinhas.toString());
+                    } else if (rdCarregador.isChecked()) {
+                        newPrecoForn.setRb_carregador(rdCarregador.toString());
+                    } else if (rdPeliculas.isChecked()) {
+                        newPrecoForn.setRb_peliculas(rdPeliculas.toString());
+                    } else if (rdDiversos.isChecked()) {
+                        newPrecoForn.setRb_diversos(rdDiversos.toString());
+                    } else {
+                        newPrecoForn.setRb_fone(rdFones.toString());
+                    }
+                    databaseReference.child("Preco-Produto-fornecedor").child(newPrecoForn.getId()).setValue(newPrecoForn); // cadastra no Firebase
+                    AlertDialog show = new AlertDialog.Builder(CadProdPrecoFornecedor.this)
+                            .setTitle("Sucesso")
+                            .setMessage("Cadastrado com sucesso!")
+                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    CadProdPrecoFornecedor.this.finish();
+                                }
+                            })
+                            .show();
+                    limparCampos();
                 }
             }
         });
+        inicializarFirebase();
+    }
+    private void limparCampos() {
+        Marca.setText("");
+        Modelo.setText("");
+        Descricao.setText("");
+        ValorCompra.setText("");
+        Cnpj.setText("");
+        CodIdentificacao.setText("");
+        Fornecedor.setText("");
+    }
+
+    private void inicializarFirebase() {
+        FirebaseApp.initializeApp(CadProdPrecoFornecedor.this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference =  firebaseDatabase.getReference();
     }
 }
+
