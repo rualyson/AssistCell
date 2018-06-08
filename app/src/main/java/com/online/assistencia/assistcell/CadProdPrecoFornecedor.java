@@ -3,8 +3,10 @@ package com.online.assistencia.assistcell;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,6 +32,11 @@ public class CadProdPrecoFornecedor extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setTitle("Cad. de Preço P/ Fornecedor");
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cad_prod_preco_fornecedor);
         Marca = (EditText) findViewById(R.id.editMarca);
@@ -53,15 +60,32 @@ public class CadProdPrecoFornecedor extends AppCompatActivity {
         botCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //NÃO COLOQUEI DESCRIÇÃO PQ ACREDITO SER UM ITEM OPCIONAL
-                if (Marca.getText().length() == 0 || Modelo.getText().length() == 0 ||
+
+                if ((Marca.getText().length() == 0 && Modelo.getText().length() == 0 &&
+                        Cnpj.getText().length() == 0 && Fornecedor.getText().length() == 0 &&
+                        ValorCompra.getText().length() == 0 && CodIdentificacao.getText().length() == 0) &&
+                        (rdTelas.isChecked() == false && rdPeliculas.isChecked() == false
+                        && rdFones.isChecked() == false && rdCapinhas.isChecked() == false
+                        && rdCarregador.isChecked() == false && rdDiversos.isChecked() == false)) {
+                    Toast.makeText(getApplication(), "ERRO! Preencha os campos corretamente! \n" +
+                            "ERRO! Selecione uma categoria!", Toast.LENGTH_LONG).show();
+                }
+
+                else if (Marca.getText().length() == 0 && Modelo.getText().length() == 0 &&
+                        Cnpj.getText().length() == 0 && Fornecedor.getText().length() == 0 &&
+                        ValorCompra.getText().length() == 0 && CodIdentificacao.getText().length() == 0) {
+                    Toast.makeText(getApplication(), "ERRO! Preencha os campos vazios corretamente!", Toast.LENGTH_LONG).show();
+                }
+
+                else if (Marca.getText().length() == 0 || Modelo.getText().length() == 0 ||
                         Cnpj.getText().length() == 0 || Fornecedor.getText().length() == 0 ||
                         ValorCompra.getText().length() == 0 || CodIdentificacao.getText().length() == 0) {
                     Toast.makeText(getApplication(), "ERRO! Os campos 'Fornecedor', CNPJ, 'Marca', 'Código de Identificação', " +
                                     "'Modelo' e 'Valor da Compra' são obrigatórios!",
                             Toast.LENGTH_LONG).show();
                 }
-                if (rdTelas.isChecked() == false && rdPeliculas.isChecked() == false
+
+                else if (rdTelas.isChecked() == false && rdPeliculas.isChecked() == false
                         && rdFones.isChecked() == false && rdCapinhas.isChecked() == false
                         && rdCarregador.isChecked() == false && rdDiversos.isChecked() == false) {
                     Toast.makeText(getApplicationContext(), "ERRO! Selecione uma categoria!",
@@ -105,6 +129,18 @@ public class CadProdPrecoFornecedor extends AppCompatActivity {
         });
         inicializarFirebase();
     }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                startActivity(new Intent(this, EscFornecedor.class));
+                finishAffinity();
+                break;
+            default:break;
+        }
+        return true;
+    }
+
     private void limparCampos() {
         Marca.setText("");
         Modelo.setText("");
