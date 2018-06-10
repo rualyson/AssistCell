@@ -1,9 +1,13 @@
 package com.online.assistencia.assistcell;
 
 import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.media.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -79,26 +83,28 @@ public class Solicitacao extends AppCompatActivity {
                             })
                             .show();
                     limparcampos();
+
                 }
             }
         });
         inicializarFirebase();
-    }
+            }
 
-    private void inicializarFirebase() {
-        FirebaseApp.initializeApp(Solicitacao.this);
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference =  firebaseDatabase.getReference();
-    }
-    public void limparcampos(){
-        editModelo.setText("");
-        editMarca.setText("");
-        editProduto.setText("");
-        editTelefone.setText("");
-        editQuant.setText("");
-        editNome.setText("");
-        editEmail.setText("");
-    }
+            private void inicializarFirebase() {
+                FirebaseApp.initializeApp(Solicitacao.this);
+                firebaseDatabase = FirebaseDatabase.getInstance();
+                databaseReference = firebaseDatabase.getReference();
+            }
+
+            public void limparcampos() {
+                editModelo.setText("");
+                editMarca.setText("");
+                editProduto.setText("");
+                editTelefone.setText("");
+                editQuant.setText("");
+                editNome.setText("");
+                editEmail.setText("");
+            }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) { //Botão adicional na ToolBar
@@ -107,9 +113,9 @@ public class Solicitacao extends AppCompatActivity {
                 startActivity(new Intent(this, Inicio.class));
                 finishAffinity();  //Matar activity
                 break;
-            default:break;
+            default:
+                break;
         }
         return true;
     }
-
 }

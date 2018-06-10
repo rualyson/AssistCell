@@ -46,7 +46,9 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
 
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.notification, menu);
         getMenuInflater().inflate(R.menu.logout, menu);
+
         return true;
     }
 
@@ -59,6 +61,9 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
             mAuth.signOut();
             startActivity(new Intent(this, LoginActivity.class));
             finish();
+            return true;
+        }else if (id == R.id.btn_notification) {
+            startActivity(new Intent(this, Notificacao.class));
             return true;
         }
 
