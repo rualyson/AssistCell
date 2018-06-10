@@ -63,8 +63,8 @@ public class FormReservaActivity extends AppCompatActivity {
                     databaseReference.child("Reservas").child(newReserva.getId()).setValue(newReserva);
 
                     AlertDialog show = new AlertDialog.Builder(FormReservaActivity.this)
-                            .setTitle("Sucesso")
-                            .setMessage("Reservado com Sucesso!")
+                            .setTitle("Reservado com sucesso!\nSeu código de Reserva é:")
+                            .setMessage(newReserva.getId())
                             .setPositiveButton("Ok",new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog,int id) {
                                     FormReservaActivity.this.finish();
