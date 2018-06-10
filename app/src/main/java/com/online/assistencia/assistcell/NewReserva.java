@@ -8,10 +8,19 @@ public class NewReserva {
 
     SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
     String formattedDate = df.format(c.getTime());
+    private String Titulo;
     private String id;
     private String Marca;
     private String Modelo;
     private String Nome;
+
+    public String getTitulo() {
+        return Titulo;
+    }
+
+    public void setTitulo(String Titulo) {
+        this.Titulo = "Reserva de Mercadoria";
+    }
 
     public String getId() {
         return id;
