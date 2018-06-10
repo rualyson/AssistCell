@@ -92,4 +92,14 @@ public class NewOrcamento {
     public void setRb_buscarAssist(String rb_buscarAssist) {
         this.rb_buscarNaAssistencia = "Buscar na Assistência Técnica";
     }
+    public String toString() {
+        return "Nome do cliente:" +nomeCli+ '\n' +
+                 "Marca do aparelho: " +Marca+ '\n' +
+                "Modelo" +Modelo+ '\n' +
+                "Estado fisico: " +EstadoF+ '\n' +
+                "Relato: " +Relato+ '\n' +
+                "Contato: " +Contato+ '\n' +
+                "E-mail: " +Email;
+
+    }
 }

@@ -1,13 +1,11 @@
 package com.online.assistencia.assistcell;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -21,52 +19,56 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TabServicos extends AppCompatActivity  implements View.OnClickListener{
-
+public class TabOrcamento extends AppCompatActivity implements View.OnClickListener{
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
-    ListView listV_OS;
+    ListView listV_orcamento;
 
-    private List<NewOS> listServico = new ArrayList<NewOS>();
-    private ArrayAdapter<NewOS> arrayAdapterOS;
-
+    private List<NewOrcamento> listOrcamento = new ArrayList<NewOrcamento>();
+    private ArrayAdapter<NewOrcamento> arrayAdapterOrcamento;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tab_services);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_tab_orcamento);
+
+        listV_orcamento = (ListView) findViewById(R.id.listV_Orcamento);
+        listV_orcamento.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id) {
+                Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                emailIntent.setType("text/plain");
+                startActivity(emailIntent);
+            }
+        });
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle("Ordem de serviços (OS)");
-
-        listV_OS = (ListView) findViewById(R.id.listV_newOS);
+        getSupportActionBar().setTitle("Orçamento de clientes");
 
         inicializarFirebase();
         eventoDatabase();
-
     }
-
     private void inicializarFirebase() {
-        FirebaseApp.initializeApp(TabServicos.this);
+        FirebaseApp.initializeApp(TabOrcamento.this);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference =  firebaseDatabase.getReference();
     }
 
     private void eventoDatabase(){
-        databaseReference.child("OS").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Orcamentos").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                listServico.clear();
+                listOrcamento.clear();
                 for (DataSnapshot objSnapshot: dataSnapshot.getChildren()){
-                    NewOS newOS = objSnapshot.getValue(NewOS.class);
-                    listServico.add(newOS);
+                    NewOrcamento newOrcamento = objSnapshot.getValue(NewOrcamento.class);
+                    listOrcamento.add(newOrcamento);
                 }
-                arrayAdapterOS = new ArrayAdapter<NewOS>(TabServicos.this,
-                        android.R.layout.simple_list_item_1, listServico);
-                listV_OS.setAdapter(arrayAdapterOS);
+                arrayAdapterOrcamento = new ArrayAdapter<NewOrcamento>(TabOrcamento.this,
+                        android.R.layout.simple_list_item_1, listOrcamento);
+                listV_orcamento.setAdapter(arrayAdapterOrcamento);
             }
 
             @Override
