@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.view.MenuItem;
 import android.view.View;
 
 public class EscOS extends AppCompatActivity implements View.OnClickListener {
@@ -50,5 +51,15 @@ public class EscOS extends AppCompatActivity implements View.OnClickListener {
                 break;
         }
 
+    }
+    public boolean onOptionsItemSelected(MenuItem item) { //Botão adicional na ToolBar
+        switch (item.getItemId()) {
+            case android.R.id.home:  //ID do seu botão
+                startActivity(new Intent(this, DashADM.class));
+                finishAffinity();  //Matar activity
+                break;
+            default:break;
+        }
+        return true;
     }
 }
