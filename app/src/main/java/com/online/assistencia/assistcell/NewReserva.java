@@ -1,7 +1,13 @@
 package com.online.assistencia.assistcell;
 
-public class NewReserva {
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
+public class NewReserva {
+    Calendar c = Calendar.getInstance();
+
+    SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+    String formattedDate = df.format(c.getTime());
     private String id;
     private String Marca;
     private String Modelo;
@@ -56,7 +62,7 @@ public class NewReserva {
     }
 
     public String getData() {
-        return Data;
+        return formattedDate;
     }
 
     public void setData(String data) {

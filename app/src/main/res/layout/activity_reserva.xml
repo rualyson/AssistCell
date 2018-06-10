@@ -20,6 +20,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+            <TextView
+                android:id="@+id/textInforms"
+                android:layout_width="352dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="15dp"
+                android:text="ATENÇÃO: As reservas só serão válidas até 2 dias úteis. Caso o comprador não buscar a mercadoria nesse prazo, NÃO garantimos a disponibilidade."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <TextView
                 android:id="@+id/labelTitulo"
