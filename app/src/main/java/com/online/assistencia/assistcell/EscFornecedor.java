@@ -63,9 +63,8 @@ public class EscFornecedor extends AppCompatActivity implements View.OnClickList
                 startActivity(i);
                 break;
             case R.id.ListPreco:
-                //substituir o CadastroFuncionario pela classe que irá direcionar
-                //i = new Intent(this, CadastroFuncionarios.class);
-                //startActivity(i);
+                i = new Intent(this, TabPreco.class);
+                startActivity(i);
                 break;
         }
     }

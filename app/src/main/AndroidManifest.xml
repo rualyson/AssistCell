@@ -59,7 +59,8 @@
         <activity android:name=".CadFornecedorNovo" />
         <activity android:name=".TabFornecedores" />
         <activity android:name=".CadProdPrecoFornecedor" />
-        <activity android:name=".Notificacao"></activity>
+        <activity android:name=".Notificacao" />
+        <activity android:name=".TabPreco"></activity>
     </application>
 
 </manifest>
