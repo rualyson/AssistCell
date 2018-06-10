@@ -1,7 +1,9 @@
 package com.online.assistencia.assistcell;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -29,6 +31,9 @@ public class TabPreco extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab_preco);
         listV_Preco = (ListView) findViewById(R.id.listV_preco);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setTitle("Preços de Compra");
 
         inicializarFirebase();
         eventoDatabase();
@@ -59,5 +64,16 @@ public class TabPreco extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference =  firebaseDatabase.getReference();
     }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                startActivity(new Intent(this, EscFornecedor.class));
+                finishAffinity();
+                break;
+            default:break;
+        }
+        return true;
+    }
+
 
 }
