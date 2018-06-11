@@ -140,7 +140,7 @@ public class CadServices extends AppCompatActivity implements View.OnClickListen
         public boolean onOptionsItemSelected(MenuItem item) {
             switch (item.getItemId()) {
                 case android.R.id.home:
-                    startActivity(new Intent(this, TabServicos.class));
+                    startActivity(new Intent(this, EscOS.class));
                     finishAffinity();
                     break;
                 default:break;
