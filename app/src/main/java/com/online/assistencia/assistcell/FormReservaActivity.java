@@ -53,14 +53,23 @@ public class FormReservaActivity extends AppCompatActivity {
                             Toast.LENGTH_LONG).show();
                 } else {
                     NewReserva newReserva = new NewReserva();
+                    NewNotificacao newNotificacao = new NewNotificacao();
+                    newReserva.setTitulo("Reserva de Mercadoria");
+                    newNotificacao.setTitulo("Reserva de Mercadoria");
                     newReserva.setId(UUID.randomUUID().toString());
+                    newNotificacao.setId_reserva(UUID.randomUUID().toString());
                     newReserva.setMarca(editMarca.getText().toString());
+                    newNotificacao.setMarca_reservada(editMarca.getText().toString());
                     newReserva.setModelo(editModelo.getText().toString());
+                    newNotificacao.setModelo_reservado(editModelo.getText().toString());
                     newReserva.setData(editData.getText().toString());
+                    newNotificacao.setData_reserva(editData.getText().toString());
                     newReserva.setTelefone(editTelefone.getText().toString());
                     newReserva.setNome(editNome.getText().toString());
+                    newNotificacao.setNome_cliente(editNome.getText().toString());
                     newReserva.setEmail(editEmail.getText().toString());
                     databaseReference.child("Reservas").child(newReserva.getId()).setValue(newReserva);
+                    databaseReference.child("Notificacoes").child(newNotificacao.getId_reserva()).setValue(newNotificacao);
 
                     AlertDialog show = new AlertDialog.Builder(FormReservaActivity.this)
                             .setTitle("Reservado com sucesso!\nSeu código de Reserva é:")

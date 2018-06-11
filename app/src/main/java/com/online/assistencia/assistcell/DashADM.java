@@ -81,7 +81,7 @@ public class DashADM extends AppCompatActivity implements View.OnClickListener {
                 startActivity(i);
                 break;
             case R.id.ordemService:
-                i = new Intent(this, TabServicos.class);
+                i = new Intent(this, EscOS.class);
                 startActivity(i);
                 break;
             case R.id.prodFalta:

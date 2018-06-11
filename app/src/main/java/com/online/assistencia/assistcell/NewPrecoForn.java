@@ -123,59 +123,43 @@ public class NewPrecoForn {
 
     public String toString() {
         if(rb_telas!=null){
-            return  "Categoria = "+rb_telas+'\n'+
-                    "Marca = " + marca + '\n' +
-                    "Modelo = " + modelo + '\n' +
-                    "Descrição = " + descricao + '\n' +
-                    "Valor de Compra = " + valorCompra + '\n' +
-                    "CNPJ = " + cnpj + '\n' +
-                    "Cod. Identificação = " + codIdentificacao + '\n' +
-                    "Fornecedor = " + fornecedor + '\n' ;
+            return  "Categoria do Produto: "+rb_telas+'\n'+
+                    "Fornecedor: " + fornecedor + '\n' +
+                    "Marca: " + marca + '\n' +
+                    "Modelo: " + modelo + '\n' +
+                    "Valor de Compra: " + valorCompra + '\n' ;
         }else if(rb_peliculas!=null){
-            return  "Categoria = "+rb_peliculas+'\n'+
-                    "Marca = " + marca + '\n' +
-                    "Modelo = " + modelo + '\n' +
-                    "Descrição = " + descricao + '\n' +
-                    "Valor de Compra = " + valorCompra + '\n' +
-                    "CNPJ = " + cnpj + '\n' +
-                    "Cod. Identificação = " + codIdentificacao + '\n' +
-                    "Fornecedor = " + fornecedor + '\n' ;
+            return  "Categoria do Produto: "+rb_peliculas+'\n'+
+                    "Fornecedor: " + fornecedor + '\n' +
+                    "Marca: " + marca + '\n' +
+                    "Modelo: " + modelo + '\n' +
+                    "Valor de Compra: " + valorCompra + '\n' ;
         }else if(rb_fone!=null){
-            return  "Categoria = "+rb_fone+'\n'+
-                    "Marca = " + marca + '\n' +
-                    "Modelo = " + modelo + '\n' +
-                    "Descrição = " + descricao + '\n' +
-                    "Valor de Compra = " + valorCompra + '\n' +
-                    "CNPJ = " + cnpj + '\n' +
-                    "Cod. Identificação = " + codIdentificacao + '\n' +
-                    "Fornecedor = " + fornecedor + '\n' ;
+            return  "Categoria do Produto: "+rb_fone+'\n'+
+                    "Fornecedor: " + fornecedor + '\n' +
+                    "Marca: " + marca + '\n' +
+                    "Modelo: " + modelo + '\n' +
+                    "Valor de Compra: " + valorCompra + '\n' ;
         }else if(rb_cases!=null){
-            return  "Categoria = "+rb_cases+'\n'+
-                    "Marca = " + marca + '\n' +
-                    "Modelo = " + modelo + '\n' +
-                    "Descrição = " + descricao + '\n' +
-                    "Valor de Compra = " + valorCompra + '\n' +
-                    "CNPJ = " + cnpj + '\n' +
-                    "Cod. Identificação = " + codIdentificacao + '\n' +
-                    "Fornecedor = " + fornecedor + '\n' ;
+            return  "Categoria do Produto: "+rb_cases+'\n'+
+                    "Fornecedor: " + fornecedor + '\n' +
+                    "Marca: " + marca + '\n' +
+                    "Modelo: " + modelo + '\n' +
+                    "Valor de Compra: " + valorCompra + '\n' ;
         }else if(rb_carregador!=null){
-            return  "Categoria = "+rb_carregador+'\n'+
-                    "Marca = " + marca + '\n' +
-                    "Modelo = " + modelo + '\n' +
-                    "Descrição = " + descricao + '\n' +
-                    "Valor de Compra = " + valorCompra + '\n' +
-                    "CNPJ = " + cnpj + '\n' +
-                    "Cod. Identificação = " + codIdentificacao + '\n' +
-                    "Fornecedor = " + fornecedor + '\n' ;
+            return  "Categoria do Produto: "+rb_carregador+'\n'+
+                    "Fornecedor: " + fornecedor + '\n' +
+                    "Marca: " + marca + '\n' +
+                    "Modelo: " + modelo + '\n' +
+                    "Valor de Compra: " + valorCompra + '\n' ;
         }else{
-            return  "Categoria = "+rb_diversos+'\n'+
-                    "Marca = " + marca + '\n' +
-                    "Modelo = " + modelo + '\n' +
-                    "Descrição = " + descricao + '\n' +
-                    "Valor de Compra = " + valorCompra + '\n' +
-                    "CNPJ = " + cnpj + '\n' +
-                    "Cod. Identificação = " + codIdentificacao + '\n' +
-                    "Fornecedor = " + fornecedor + '\n' ;
+            return  "Categoria do Produto: "+rb_diversos+'\n'+
+                    "Fornecedor: " + fornecedor + '\n' +
+                    "Marca: " + marca + '\n' +
+                    "Modelo: " + modelo + '\n' +
+                    "Valor de Compra: " + valorCompra + '\n' ;
+
+
         }
 
     }

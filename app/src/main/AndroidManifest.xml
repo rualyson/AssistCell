@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
         android:allowBackup="true"
         android:icon="@drawable/assist"
         android:label="@string/app_name"
@@ -59,7 +61,10 @@
         <activity android:name=".CadFornecedorNovo" />
         <activity android:name=".TabFornecedores" />
         <activity android:name=".CadProdPrecoFornecedor" />
-        <activity android:name=".Notificacao"></activity>
+        <activity android:name=".Notificacao" />
+        <activity android:name=".TabPreco" />
+        <activity android:name=".EscOS" />
+        <activity android:name=".TabOrcamento"></activity>
     </application>
 
 </manifest>
